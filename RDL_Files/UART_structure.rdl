@@ -1,0 +1,295 @@
+`ifndef UART_STRUCTURE_RDL
+`define UART_STRUCTURE_RDL
+
+regfile UART_structure {
+    name = "OBMF_UART_STRUCTURE";
+    desc = "UART Registers";
+    structure_version   = "1.0";
+    
+    channel_type_guid   = 0xc143_a289_0473_4080_9c42_1e8c_9415_35b2; // UART
+    read_supported      = true;                 // Indicates if OBMF-ICP Secondary supports Read transactions
+    write_supported     = false;                // Indicates if OBMF-ICP Secondary supports Write transactions
+
+    
+    reg {
+        name = "RBR_THR_DLL";
+        desc = "RBR = Recieve buffer register - RO. This register contains the data byte received on the serial input port (sin). The data in this register is valid only if the Data Ready (LSR(0) is set to 1). If FIFOs are disabled (FCR(0) is cleared to 0) the data in the RBR must be read before the next data arrives, otherwise it will be overwritten, resulting in an overrun error. If FIFOs are enabled (FCR(0) set to 1) this register accesses the head of the receive FIFO. If the receive FIFO is full, and this register is not read before the next data character arrives, then the data already in the FIFO will be preserved but any incoming data will be lost. An overrun error will also occur.
+                THR = Transmit hold register - WO. This register contains data to be transmitted on the serial output port (sout). Data should only be written to the THR when the THR Empty bit (LSR(5) is set to1). If FIFOs are disabled (FCR(0) is set to 0) and THRE is set to 1, writing a single character to the THR clears the THRE. Any additional writes to the THR before the THRE is set again causes the THR data to be overwritten. If FIFO's are enabled (FCR(0) is set to 1) and THRE is set, the FIFO can be filled up to a preconfigured depth (FIFO_DEPTH). Any attempt to write data when the FIFO is full results in the write data being lost.
+                DLL = Divisor Latch low. - RW. This register makes up the lower 8-bits of a 16-bit, Read/write, Divisor Latch register that contains the baud rate divisor for the UART. This register may only be accessed when the DLAB bit (LCR(7) is set to 1). The output baud rate is equal to the system clock (clk) frequency divided by sixteen times the value of the baud rate divisor, as follows: baud rate = (system clock freq) / (16 * divisor) Note: With the Divisor Latch Registers (DLL and DLH) set to zero, the baud clock is disabled and no serial communications will occur. Also, once the DLL is set, at least 8 system clock cycles should be allowed to pass before transmitting or receiving data. ";
+        regwidth = 8;
+
+        field {
+            desc = "When DLAB = 0, this 8-bit value is used as Received Buffer Register as Read, and is used as Transmit Holding Register as Write. When DLAB is 1, this register is used as DLL (Divisor Latch Low Byte Register).";
+            sw = rw;
+        }RBR_THR_DLL [7:0]= 0x00;
+
+    }RBR_THR_DLL @ 0x00; // offset 0h
+
+    reg {
+        name = "IER_DLH";
+        desc =  "IER = Interrupt Enable Register - RW. The ier_dlh (Interrupt Enable Register) may only be accessed when the DLAB bit (7) of the LCR Register is set to 0. Allows control of the Interrupt Enables for transmit and receive functions. refer to UART Interrupt Enable register for details.
+                 DLH = Divisor Latch High - RW. The Divisor Latch High Register is accessed when the DLAB bit (LCR(7) is set to 1). Bits[7:0] contain the high order 8-bits of the baud rate divisor. The output baud rate is equal to the system clock (clk) frequency divided by sixteen times the value of the baud rate divisor, as follows: baud rate = (system clock freq) / (16 * divisor). Note: With the Divisor Latch Registers (DLL and DLH) set to zero, the baud clock is disabled and no serial communications will occur. Also, once the DLL is set, at least 8 system clock cycles should be allowed to pass before transmitting or receiving data.";
+        regwidth = 8;
+
+        field {
+            desc = "This is a multi-function register. This register enables/disables receive and transmit interrupts and also controls the most significant 8-bits of the baud rate divisor. When DLAB = 0, this 8-bit value is used as Interrupt Enable Register. When DLAB = 1, this 8-bit value is used as DLH (Divisor Latch High Byte Register).";
+            sw = rw;
+        } IER_DLH [7:0] = 0x00;
+    } IER_DLH @ 0x01; // offset 1h
+
+    reg {
+        name = "IIR_FCR";
+        desc = "IIR = Interrupt Identification Register - RO. The IIR register is read to determine the type and source of UART interrupts. To be 16550 compatible, the lower 4 bits (0-3) of the IIR register are priority encoded. If two or more interrupts occurs which are represented by bits (0-3), only the interrupt with the highest priority is displayed. The upper 4 bits (4-7) are not priority encoded. These bits will assert/deassert independently of the lower 4 bits. Bit 0 (nIP) is used to indicate the existence of an interrupt in the priority encoded bits (0-3) of the IIR register. A low signal on this bit indicates an encoded interrupt is pending. If this bit is high, no encoded interrupt is pending regardless of the state of the other 3 bits. nIP has no effect ,or association with, the upper bits four bits (4-7) which assert/deassert independently of nIP. Refer to UART Interrupt Identification register for details.
+                FCR = FIFO Control Register - WO. FCR is a write-only register that is located at the same address as the IIR (IIR is a read-only register). FCR enables/disables the transmitter/receiver FIFOs, clears the transmitter/receiver FIFOs, sets the Receiver FIFO trigger level. Refer to FIFO Control register for details.";
+        regwidth = 8;
+
+        field {
+            desc = "When read, this 8-bit value is used as Interrupt Identification Register. When written, this 8-bit value is used as FIFO Control Register.";
+            sw = rw;
+        } IIR_FCR [7:0] = 0x01;
+    } IIR_FCR @ 0x02; // offset 2h
+
+    reg {
+        name = "LCR";
+        desc = "In the Line Control register, system programmers specify the format of the asynchronous data communications exchange. The serial data format consists of a start bit (logic 0), five to eight data bits, an optional parity bit, and one or two stop bits (logic 1). The LCR has bits for accessing the Divisor Latch registers and causing a Break condition. Programmers can also read the contents of the Line Control register. The read capability simplifies system programming and eliminates the need for separate storage in system memory.";
+        regwidth = 8;
+
+        field {
+            desc = "The word length select bits specify the number of data bits (five to eight bits are allowed) in each transmitted or received serial character.
+                    00: 5-bit character (default)
+                    01: 6-bit character,
+                    10: 7-bit character,
+                    11: 8-bit character";
+            sw = rw;
+        } LCR_WLS [1:0] = 0x0;
+
+        field {
+            desc = "This bit specifies the number of stop bits transmitted and received in each serial character.
+                    0: 1 stop bit,
+                    1: 2 stop bits; except for 5-bit character, then 1 bits,
+                    The receiver checks the first stop bit only, regardless of the number of stop bits selected.";
+            sw = rw;
+        } LCR_STB [2:2] = 0x0;
+
+        field {
+            desc = "When PEN is logic 1, a parity bit is generated (transmit data) or checked (receive data) between the last data-word bit and stop bit of the serial data.
+                    0: No parity function.
+                    1: Allows parity generation and checking.";
+            sw = rw;
+        } LCR_PEN [3:3] = 0x0;
+
+        field {
+            desc =  "EPS is only valid when the parity is enabled (PEN = 1).
+                    0: Sends and checks for odd parity,
+                    1: Sends and checks for even parity.";
+            sw = rw;
+        } LCR_EPS [4:4] = 0x0;
+
+        field {
+            desc = "This bit is the sticky-parity bit, which can be used in multiprocessor communications.
+                    0: No effect on parity bit.
+                    1: Forces parity bit to be opposite of EPS bit value.
+                    When PEN and STKYP are logic 1, the bit that is transmitted in the parity-bit location (the bit just before the stop bit) is the complement of the EPS bit. If EPS is 0, then the bit at the parity-bit location will be transmitted as a 1. In the receiver, if STKYP and PEN are 1, then the receiver compares the bit that is received in the parity-bit location with the complement of the EPS bit. If the values being compared are not equal, the receiver sets the parity-error bit in LSR, and causes an Error Interrupt if Line-Status Interrupts were enabled. For example, if EPS is 0, the receiver expects the bit received at the parity-bit location to be 1. If it is not, then the parity-error bit is set. By forcing the bit value at the parity-bit location, rather than calculating a parity value, a system with a Driver/Initiator transmitter and multiple receivers can identify some transmitted characters as receiver addresses and the rest of the characters as data. If PEN = 0, STKYP is ignored.";
+            sw = rw;
+        } LCR_STKYP [5:5] = 0x0;
+
+        field {
+            desc = "The set-break control bit transmits a Break condition to the receiving UART. When SB is set to logic 1, the serial output (TXD) is forced to the Spacing (logic 0) state and remains there until SB is set to logic 0. This bit acts only on the TXD pin and has no effect on the transmitter logic.
+                    0: No effect on TXD output.
+                    1: Forces TXD output to 0 (space).
+                    This feature enables the processor to alert a terminal in a computer communications system. If the following sequence is executed, no erroneous characters will be transmitted because of the break: Load 0x00 in the Transmit Holding register in response to a TDRQ Interrupt. After TDRQ goes high (indicating that 0x00 is being shifted out), set the break bit before the parity or stop bits reach the TXD pin. Wait for the transmitter to be idle (TEMT = 1), and clear the break bit when normal transmission has to be restored. During the Break, the transmitter can be used as a character timer to accurately establish the Break duration. In FIFO mode, wait for the transmitter to be idle (TEMT=1) to set and clear the break bit.";
+            sw = rw;
+        } LCR_SB [6:6] = 0x0;
+
+        field {
+            desc =  "The divisor-latch access bit must be set high (logic 1) to access the divisor latches of the baud rate generator during a read or write operation. It must be set low (logic 0) to access the receiver buffer, the Transmit Holding register, or the Interrupt Enable register. This bit does not need to be set when using auto-baud.
+                     0: Access Transmit Holding register (THR), Receive Buffer register (RBR) and Interrupt Enable register.
+                     1: Access Divisor Latch registers (DLL and DLH)";
+            sw = rw;
+        } LCR_DLAB [7:7] = 0x0;
+    } LCR @ 0x03; // offset 3h
+
+    reg {
+        name = "MCR";
+        desc = "This register controls the interface with the modem or data set (or a peripheral device emulating a modem)";
+        regwidth = 8;
+
+        field {
+            desc =  "This bit controls the Data Terminal Ready output.
+                    0: Primary output \\\"uart_dtr\\\" pin is forced to logic 1.
+                    1: Primary output uart_dtr pin is forced to logic 0.
+                    The uart_dtr output of the UART may be applied to an EIA inverting line driver (such as the DS1488) to obtain the proper polarity input at the succeeding modem or data set.";
+            sw = rw;
+        } MCR_DTR [0:0] = 0x0;
+
+        field {
+            desc = "When Auto Flow is disabled: MCR.AFE = 0:  0: Primary output uart_rts pin is forced to logic 1 | 1: Primary output uart_rts pin is forced to logic 0 
+                   When Auto Flow is enabled: MCR.AFE = 1: | 0: Auto-RTS is disabled | 1: Auto-RTS is enabled ";
+            sw = rw;
+        } MCR_RTS [1:1] = 0x0;
+
+        field {
+            desc = "The auxiliary output OUT1 bit is only used in Loopback Test mode.
+                    0: uart_ri UART pin input set low when in Loop-back mode
+                    1: uart_ri UART pin input set high when in Loop-back mode
+                    Note: OUT1 is not used in IBL.";
+            sw = rw;
+        } MCR_OUT1 [2:2] = 0x0;
+
+        field {
+            desc =  "The function of the auxiliary output OUT2 bit differs depending on the mode of the UART.
+                    0: uart_dcd UART pin input set low when in Loop-back mode
+                    1: uart_dcd UART pin input set high when in Loop-back mode.
+                    Note: OUT2 is not used in IBL.";
+            sw = rw;
+        } MCR_OUT2 [3:3] = 0x0;
+
+        field {
+            desc = "This bit provides a local loopback feature for diagnostic testing of the UART. This feature allows the processor to verify the UART transmit and receive data paths. The Transmit, Receive, and Modem Control interrupts are operational in this mode.
+                    0: Normal UART operation.
+                    1: Loopback Test mode operation.
+                    When LOOP is set to logic 1, the following will occur: The TXD (transmitter output) pin is set to a logic-1 state. The RXD (receiver input) pin is disconnected. The output of the Transmitter Shift register is \\\"looped back\\\" into the Receiver-Shift register input. The four modem-control inputs (uart_cts, uart_dsr, uart_dcd, and uart_ri) are disconnected from the pins and the modem-control output pins (uart_rts and uart_dtr) are forced to their inactive state. The lower four bits of the Modem Control register (MCR) are connected to the upper four modem status register (MSR) bits. Flow control can be tested.
+                    DTR = 1 forces DSR to a 1
+                    RTS = 1 forces CTS to a 1
+                    OUT1 = 1 forces RI to a 1
+                    OUT2= 1 forces DCD to a 1
+                    Coming out of the Loopback Test mode may result in unpredictable activation of the delta bits (bits 3:0) in the Modem Status register (MSR). It is recommended that MSR is read once to clear the delta bits in the MSR.";
+            sw = rw;
+        } MCR_LOOP [4:4] = 0x0;
+    } MCR @ 0x04; // offset 4h
+
+    reg {
+        name = "MCR";
+        desc = "This register provides status information to the processor concerning the data transfers. Bits 5 and 6 indicate the status of the transmitter. The remainder of the bits contains information about the receiver. In non-FIFO mode, three of the LSR register bits parity error, framing error, and break interrupt indicate the error status of the character that has just been received. In FIFO mode, these three status bits are stored with each received character in the FIFO. These bits in the line status register are associated with the character at the top of the FIFO. These bits are not cleared by reading the erroneous byte from the FIFO or receive buffer. They are cleared only by reading LSR. In FIFO mode, the Line Status Interrupt occurs only when the erroneous byte is at the top of the FIFO. If the erroneous byte being received is not at the top of the FIFO, an interrupt is generated only after the previous bytes are read and the erroneous byte is moved to the top of the FIFO.";
+        regwidth = 8;
+
+        field {
+            desc = "DR is set to logic 1 when a complete incoming character has been received and transferred into the Receiver Buffer register or the FIFO. In non-FIFO mode, DR is reset to 0 when the receive buffer is read. In FIFO mode, DR is reset to logic 0 if the FIFO is empty (last character has been read from RBR) or the RESETRF bit is set in FCR.";
+            sw = r;
+        } LSR_DR [0:0] = 0x0;
+
+        field {
+            desc = "0: No overflow error. Data has not been lost.
+                    1: Overflow error. Receive data has been lost.
+                    In non-FIFO mode, OE indicates that data in the Receiver Buffer register was not read by the processor before the next character was received; the new character is lost. In FIFO mode, OE indicates that all 64 bytes of the FIFO are full and the most recently received byte has been discarded. The OE indicator is set to logic 1 upon detection of an overflow condition and reset when the processor reads the Line Status register.";
+            sw = r;
+        } LSR_OE [1:1] = 0x0;
+
+        field {
+            desc = "0: No Parity error.
+                    1: Parity error has occurred.
+                    PE indicates that the received character does not have the correct even or odd parity, as selected by the Even Parity Select bit. The PE is set to logic 1 upon detection of a parity error and is reset to logic 0 when the processor reads the Line Status register. In FIFO mode, PE shows a parity error for the character at the bottom of the FIFO, not the most recent character received.";
+            sw = r;
+        } LSR_PE [2:2] = 0x0;
+
+        field {
+            desc =  "0: No Framing error.
+                    1: Framing error has occurred.
+                    FE indicates that the received character did not have a valid stop bit. FE is set to logic 1 when the bit following the last data bit or parity bit is detected as logic 0 bit (spacing level). If the Line Control register had been set for two stop bits, the receiver does not check for a valid second stop bit. The FE indicator is reset when the processor reads the Line Status register. The UART will resynchronize after a framing error by assuming that the framing error was due to the next start bit. Therefore it samples this start bit twice and then takes in the data. In FIFO mode, FE shows a framing error for the character at the bottom of the FIFO, not for the most recent character received.";
+            sw = r;
+        } LSR_FE [3:3] = 0x0; 
+
+        field {
+            desc =  "0: No break signal has been received.
+                    1: Break signal has been received.
+                    BI is set to logic 1 when the received data input is held in the Spacing (logic 0) state for longer than a full character transmission time (that is, the total time of start bit + data bits + parity bit + stop bits). The Break Indicator is reset when the processor reads the Line Status register. In FIFO mode, only one Break character (equal to 0x00) is loaded into the FIFO regardless of the length of the Break condition. BI shows the Break condition for the character at the bottom of the FIFO, not the most recent character received.";
+            sw = r;
+        } LSR_BI [4:4] = 0x0;
+
+        field {
+            desc =  "If THRE mode is disabled (IER(7) set to zero).
+                    0: The UART is NOT ready to receive data for transmission.
+                    1: The UART is ready to receive data for transmission.
+                    The assertion of TDRQ causes the UART to interrupt the processor when the Transmit Data Request Interrupt Enable IER.TIE is set high. TDRQ is set to 1 when the new symbol is copied from Transmit Holding register into the Transmit Shift register. The bit is reset to logic 0 concurrently with the loading of the Transmit Holding register by the processor. In FIFO mode, TDRQ is set to logic 1 when the FIFO is empty. It is cleared when the FIFO is more than half full. If more than 32 characters are loaded into the FIFO, the excess characters are lost.
+                    If THRE mode is enabled (IER(7) set to one), the functionality is switched to indicate the transmitter FIFO is full, and no longer controls THRE interrupts, which are then controlled by the FCR[5:4] threshold setting.";
+            sw = r;
+        } LSR_TDRQ [5:5] = 0x1;
+
+        field {
+            desc =  "0: There is data in the Transmit Shift register, the Transmit Holding register, or the FIFO (in FIFO mode).
+                    1: All the data in the transmitter has been shifted out.";
+                sw = r;
+        } LSR_TEMT [6:6] = 0x1;
+
+        field {
+            desc =  "0: No character has error inside the Receive FIFO.
+                    1: At least one character in Receiver FIFO has errors.
+                    In non-FIFO mode, this bit is always set to 0. In FIFO mode, FIFOE is set to 1 when there is at least one parity error, framing error, or break indication for any of the characters in the FIFO. A processor read to the Line Status register does not reset this bit. FIFOE is reset when all error bytes have been read from the FIFO.";
+            sw = r;
+        } LSR_FIFOE [7:7] = 0x0; 
+    } LSR @ 0x05; // offset 5h
+
+    reg {
+        name = "MSR";
+        desc = "The MSR provides the current state of the control lines from the modem or data set (or a peripheral device emulating a modem) to the processor. In addition to this current state information, four bits of the MSR provide change information. These bits, 3:0, are set to logic 1 when the associated control Input from the remote modem changes state. They are reset to logic 0 when the processor reads the MSR.
+                When bits 0, 1, 2, or 3 are set to logic 1, a Modem Status Interrupt IIR.IID is generated if bit MIE of the Interrupt Enable register is set.";
+        regwidth = 8;
+
+        field {
+            desc =  "0: No change in uart_cts pin since last read of MSR
+                    1: uart_cts pin has change state
+                    When DCTS is set the modem status interrupt will be generated if enabled in IER.";
+            sw = r;
+        } MSR_DCTS [0:0] = 0x0;
+
+        field {
+            desc =  "0: No change in uart_dsr pin since last read of MSR
+                    1: uart_dsr pin has changed state
+                    When DDSR is set the modem status interrupt will be generated if enabled in IER.";
+            sw = r;
+        } MSR_DDSR [1:1] = 0x0;
+
+        field {
+            desc =  "0: No change in uart_ri pin since last read of MSR
+                    1: uart_ri pin has changed state
+                    When TERI is set the modem status interrupt will be generated if enabled in IER.";
+            sw = r;
+        } MSR_TERI [2:2] = 0x0;
+
+        field {
+            desc =  "0: No change in uart_dcr pin since last read of MSR
+                    1: uart_dcr pin has changed state
+                    When DDCR is set the modem status interrupt will be generated if enabled in IER.";
+            sw = r;
+        } MSR_DDCR [3:3] = 0x0;
+
+        field {
+            desc =  "Loopback is disabled, MCR.LOOP = 0 | 0: Primary input uart_cts is logic 1 | 1: Primary input uart_cts is logic 0 
+                    Loopback is enabled, MCR.LOOP = 1 | 0: MCR.RTS is logic 0 | 1: MCR.RTS is logic 1";
+            sw = r;
+        } MSR_CTS [4:4] = 0x0;
+
+        field {
+            desc = "Loopback is disabled, MCR.LOOP = 0 | 0: Primary input uart_dsr is logic 1 | 1: Primary input uart_dsr is logic 0 
+                   Loopback is enabled, MCR.LOOP = 1 | 0: MCR.DTR is logic 0 | 1: MCR.DTR is logic 1";
+            sw = r;
+        } MSR_DSR [5:5] = 0x0;
+
+        field {
+            desc = "Loopback is disabled, MCR.LOOP = 0 | 0: Primary input uart_ri is logic 1 | 1: Primary input uart_ri is logic 0 
+                   Loopback is enabled, MCR.LOOP = 1 | 0: MCR.OUT1 is logic 0 | 1: MCR.OUT1 is logic 1";
+            sw = r;
+        } MSR_RI [6:6] = 0x0;
+
+        field {
+            desc = "Loopback is disabled, MCR.LOOP = 0 | 0: Primary input uart_dcd is logic 1 | 1: Primary input uart_dcd is logic 0 
+                   Loopback is enabled, MCR.LOOP = 1 | 0: MCR.OUT2 is logic 0 | 1: MCR.OUT2 is logic 1";
+            sw = r;
+        } MSR_DCD [7:7] = 0x0;
+    } MSR @ 0x06; // offset 6h
+
+    reg {
+        name = "SPR";
+        desc = "This is the SPR register";
+        regwidth = 8;
+
+        field {
+            desc = "Writing to this field does not affect the operation of the UART in any way.";
+            sw = rw;
+        } SPR [7:0] = 0x00;
+    } SCR @ 0x07; // offset 7h
+
+
+};
+
+`endif

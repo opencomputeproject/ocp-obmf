@@ -1,0 +1,20 @@
+`ifndef TPM_STRUCTURE_RDL
+`define TPM_STRUCTURE_RDL
+
+regfile TPM_structure {
+    name = "OBMF_TPM_STRUCTURE";
+    desc = "Trusted Platform Module Space. 
+            TPM Spec: PC Client Work Group PC Client Specific TPM Interface Specification (TIS),
+            Version 1.21, Revision 1.00.: https://trustedcomputinggroup.org/wp-content/uploads/TCG_PCClientTPMSpecification_1-21_1-00_FINAL.pdf ";
+    structure_version   = "1.0";
+    
+    channel_type_guid   = 0x0a92_245f_1cf4_421d_bf0f_13a9_5637_ca2d; //TPM
+    read_supported      = true;                 // Indicates if OBMF-ICP Secondary supports Read transactions
+    write_supported     = false;                // Indicates if OBMF-ICP Secondary supports Write transactions
+
+
+    TPM_SPACE_REG TPM_SPACE[1] @ 0x0000;
+
+};
+
+`endif

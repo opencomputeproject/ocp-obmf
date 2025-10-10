@@ -1,0 +1,241 @@
+`ifndef RTC_STRUCTURE_RDL
+`define RTC_STRUCTURE_RDL
+
+regfile RTC_structure {
+    name = "RTC_STRUCTURE";
+    desc = "RTC Registers";
+    structure_version   = "1.0";
+    
+    channel_type_guid   = 0x3456_8866_AB34_567f_89AB_3242_1235_6789; // RTC
+    read_supported      = true;                 // Indicates if OBMF-ICP Secondary supports Read transactions
+    write_supported     = false;                // Indicates if OBMF-ICP Secondary supports Write transactions
+
+    reg {
+        name = "SEC";
+        desc = "RTC Index: 00h. Attribute: Read/Write. Size: 8-bit. This register stores current time second. None of the bits are affected by any reset signal. Only cleared at RTC Power loss";
+        regwidth = 8;
+
+        field {
+            desc = "Time Seconds. The time in seconds can be represented in either BCD or Binary format depending on the value in RegB.Data Mode.";
+            sw = rw;
+        } SEC [7:0] = 0x00;
+    } SEC @ 0x0; //offset 0h
+
+    reg {
+        name = "SEC_ALARM";
+        desc = "RTC Index: 01h. Attribute: Read/Write. Size: 8-bit. This register stores Seconds Alarm. None of the bits are affected by any reset signal. Only cleared at RTC Power loss";
+        regwidth = 8;
+
+        field {
+            desc = "Seconds field of the Alarm.";
+            sw = rw;
+        } SEC_ALARM [7:0] = 0x00;
+    } SEC_ALARM @ 0x1; //offset 1h
+
+    reg {
+        name = "MINUTES";
+        desc = "RTC Index: 02h. Attribute: Read/Write. Size: 8-bit. This register stores current time Minutes. None of the bits are affected by any reset signal. Only cleared at RTC Power loss.";
+        regwidth = 8;
+
+        field {
+            desc = "Time Minutes. The time in minutes can be represented in either BCD or Binary format depending on the value in RegB.Data Mode";
+            sw = rw;
+        } MINUTES [7:0] = 0x00;
+    } MINUTES @ 0x2; //offset 2h
+
+    reg {
+        name = "MINUTESALARM";
+        desc = "RTC Index: 03h. Attribute: Read/Write. Size: 8-bit. This register stores Alarm Minutes. None of the bits are affected by any reset signal. Only cleared at RTC Power loss.";
+        regwidth = 8;
+
+        field {
+            desc = "Minutes field of the Alarm";
+            sw = rw;
+        } MINUTESALARM [7:0] = 0x00;
+    } MINUTESALARM @ 0x3; //offset 3h
+
+    reg {
+        name = "HOURS";
+        desc = "RTC Index: 04h. Attribute: Read/Write. Size: 8-bit. This register stores current time Hours. None of the bits are affected by any reset signal. Only cleared at RTC Power loss.";
+        regwidth = 8;
+
+        field {
+            desc = "Time Hours. The time in hours can be represented in either BCD or Binary format depending on the value in RegB.Data Mode. It can also be represented in either 12-hour mode or 24-hour mode depending on the value in RegB.Hour Format.";
+            sw = rw;
+        } HOURS [7:0] = 0x12;
+    } HOURS @ 0x4; //offset 4h
+
+    reg {
+        name = "HOURSALARM";
+        desc = "RTC Index: 05h. Attribute: Read/Write. Size: 8-bit. This register stores Alarm Hours. None of the bits are affected by any reset signal. Only cleared at RTC Power loss.";
+        regwidth = 8;
+
+        field {
+            desc = "Hours field of the Alarm.";
+            sw = rw;
+        } HOURSALARM [7:0] = 0x12;
+    } HOURSALARM @ 0x5; //offset 5h
+
+    reg {
+        name = "DAYOFWEEK";
+        desc = "RTC Index: 06h. Attribute: Read/Write. Size: 8-bit. This register stores current Day of Week. None of the bits are affected by any reset signal. Only cleared at RTC Power loss.";
+        regwidth = 8;
+
+        field {
+            desc = "This field indicates current Day of Week. 1-Sunday 2-Monday 3-Tuesday 4-Wednesday 5-Thursday 6-Friday 7-Saturday. The value is the same regardless of the Data Mode.";
+            sw = rw;
+        } DAYOFWEEK [7:0] = 0x07;
+    } DAYOFWEEK @ 0x6; //offset 6h
+
+    reg {
+        name = "DAYOFMONTH";
+        desc = "RTC Index: 07h. Attribute: Read/Write. Size: 8-bit. This register stores current Day of Month. None of the bits are affected by any reset signal. Only cleared at RTC Power loss.";
+        regwidth = 8;
+
+        field {
+            desc = "This field indicates current Day of Month. The day of month can be represented in either BCD or Binary format depending on the value in RegB.Data Mode.";
+            sw = rw;
+        } DAYOFMONTH [7:0] = 0x01;
+    } DAYOFMONTH @ 0x7; //offset 7h
+
+    reg {
+        name = "MONTH";
+        desc = "RTC Index: 08h. Attribute: Read/Write. Size: 8-bit. This register stores current Month. None of the bits are affected by any reset signal. Only cleared at RTC Power loss.";
+        regwidth = 8;
+
+        field {
+            desc = "This field indicates current Month. The month can be represented in either BCD or Binary format depending on the value in RegB.Data Mode.";
+            sw = rw;
+        } MONTH [7:0] = 0x01;
+    } MONTH @ 0x8; //offset 8h
+
+    reg {
+        name = "YEAR";
+        desc = "RTC Index: 09h. Attribute: Read/Write. Size: 8-bit. This register stores current Year. None of the bits are affected by any reset signal. Only cleared at RTC Power loss.";
+        regwidth = 8;
+
+        field {
+            desc = "This field indicates current Year. The year can be represented in either BCD or Binary format depending on the value in RegB.Data Mode.";
+            sw = rw;
+        } YEAR [7:0] = 0x00;
+    } YEAR @ 0x9; //offset 9h
+
+    reg {
+        name = "REGISTERA";
+        desc = "RTC Index: 0Ah. This register is used for general configuration of the RTC functions.";
+        regwidth = 8;
+
+        field {
+            desc = "Controls the divider chain for the oscillator, and are not affected by any other reset signal.02h: Normal Operation.06h/07h: Divider in Reset. RTC stops.Others: Ignored. Keep last State.Note: Write a 06/07h, will get read back as 06h.";
+            sw = rw;
+        } DV [6:4] = 0x2;
+
+        field {
+            desc = "When set, an update is is in progress. When cleared, the update cycle will not start for at least 488 us. Always return '0' in Integrated Boot.";
+            sw = r;
+        } UIP [7:7] = 0;
+    } REGISTERA @ 0xA ; //offset Ah
+
+    reg {
+        name = "REGISTERB";
+        desc = "RTC Index: 0Bh. Attribute: Read/Write This register is used for general configuration of the RTC functions.";
+        regwidth = 8;
+
+        field {
+            desc = "Not implemented.";
+            sw = r;
+        } DSE [0:0] = 0x0;
+
+        field {
+            desc = "When set, twenty-four hour mode is selected. When cleared, twelve-hour mode is selected. In twelve hour mode, the seventh bit represents AM (cleared) and PM (set).";
+            sw = rw;
+        } HF [1:1] = 0;
+
+        field {
+            desc = "When set, represents binary representation. When cleared, denotes BCD.";
+            sw = rw;
+        } DM [2:2] = 0;
+
+        field {
+            desc = "Not implemented.";
+            sw = r;
+        } SQWE [3:3] = 0;
+
+        field {
+            desc = "When set and C.UF is set, an interrupt is generated. Not Implemented.";
+            sw = r;
+        } UIE [4:4] = 0;
+
+        field {
+            desc = "When set, and C.AF is set, an interrupt is generated.";
+            sw = rw;
+        } AIE [5:5] = 0;
+
+        field {
+            desc = "When set, and C.PF is set, an interrupt is generated. Not Implemented.";
+            sw = r;
+        } PIE [6:6] = 0;
+
+        field {
+            desc = "When cleared, an update cycle occurs once each second. If set, a current update cycle will abort and subsequent update cycles will not occur until SET is returned to zero. When set, SW may initialize time and calendar bytes safely.Note: Ignored by Integrated boot. Always allow to update Time. Reset on Global reset";
+            sw = rw;
+        } SET [7:7] = 0;
+    } REGISTERB @ 0xB ; //offset Bh
+
+    reg {
+        name = "REGISTERC";
+        desc = "RTC Index: 0Ch. Attribute: Read-Only (Writes have no effect). All bits in this register are cleared when this register is read.";
+        regwidth = 8;
+
+        field {
+            desc = "Updated-ended flag will be high immediately following an update cycle for each second. The bit is cleared upon AUX_PWRGOOD deassertion or a read of Register C.Note: in Integrated boot, Always read as '0'.";
+            sw = r;
+        } UF [4:4] = 0x0;
+
+        field {
+            desc = "Alarm Flag will be high after all Alarm values match the current time. This bit is cleared upon RTCRST# assertion or a read of Register C.";
+            sw = rw;
+        } AF [5:5] = 0;
+
+        field {
+            desc = "Periodic interrupt Flag will be one when the tap as specified by the RS bits of register A is one. If no taps are specified, this flag bit will remain at zero. This bit is cleared upon AUX_PWRGOOD deassertion or a read of Register C. Note: In Integrated boot, always read as '0'.";
+            rclr;
+            sw = r;
+        } PF [6:6] = 0;
+
+        field {
+            desc = "Interrupt Request Flag = (PF * PIE) + (AF * AIE) + (UF * UIE). This also causes the RTC Interrupt to be asserted.Note: In integrated boot, as PIE, UIE are not supported, It = (AF * AIE).";
+            sw = r; 
+        } IRQF [7:7] = 0;
+    } REGISTERC @ 0xC ; //offset Ch
+
+    reg {
+        name = "REGISTERD";
+        desc = "RTC Index: 0Dh.";
+        regwidth = 8;
+
+        field {
+            desc = "These bits store the date of month alarm value. If set to 000000, then a don't care state is assumed. Data alarm not supported in Bootable CPU, these bits will return zeros to mimic the functionality of the Motorola 146818B.";
+            sw = r;
+        } DA [5:0] = 0x0;
+
+        field {
+            desc = "This bit should always be written as a 0 for write cycle, however it will return a 1 for read cycles.";
+            sw = r;
+        } VRT [7:7] = 0x1;
+    } REGISTERD @ 0xD ; //offset Dh
+
+    reg {
+        name = "REGISTERE";
+        desc = "Remaining 114 Bytes of Lower User RAM. Each byte in this bank share the same description as shown below. RAM default values are undetermined and the last written value will be retained until RTC Clear";
+        regwidth = 8;
+
+        field {
+            desc = "These bits store the date of month alarm value. If set to 000000, then a don't care state is assumed. Data alarm not supported in Bootable CPU, these bits will return zeros to mimic the functionality of the Motorola 146818B.";
+            sw = r;
+        } LOWER_USER_RAM [5:0] = 0x0;
+    } REGISTERE @ 0xE ; //offset Eh
+
+};
+
+`endif

@@ -1,0 +1,144 @@
+`ifndef VW_STRUCTURE_RDL
+`define VW_STRUCTURE_RDL
+
+regfile VW_structure {
+    name = "OBMF_VIRTUAL_WIRES_STRUCTURE";
+    desc = "Virtual Wires Registers";
+    structure_version   = "1.0";
+    
+    channel_type_guid   = 0x0899_ABC22_8902_3451_89AB_BC56_09BC_450F; //VW
+    read_supported      = true;                 // Indicates if OBMF-ICP Secondary supports Read transactions
+    write_supported     = false;                // Indicates if OBMF-ICP Secondary supports Write transactions
+    
+    reg {
+        name = "Configuration of Virtual Wires Channel";
+        desc = "Configuration of Virtual Wires Channel";
+        regwidth = 32;
+
+        field {
+            desc = "Total number of VWs supported by OBMF-ICP Producer";
+            sw = r;
+        }VW_NO [7:0]= 0x00;
+
+        field {
+            desc = "Flag indicating of notifications from OBMF-ICP Producer to OBMF-ICP Secondary are enabled. OBMF-ICP Secondary may update this field to enable/disable. 0 - DISABLED, 1 - ENABLED, default = 0.";
+            sw = rw;
+        }VW_NOTIFICATION[8:8]= 0x00;
+
+        field {
+            desc = "Reserved";
+            sw = r;
+        }reserverd [31:9]= 0x00;
+    }VW_CFG @ 0x00; // offset 0h
+
+    reg {
+        name = "Virtual Wires 0 State";
+        desc = "Virtual Wires State";
+        regwidth = 8;
+
+        field {
+            desc = "Virtual Wires State.Indicates the state of the vGPIO: 0 - LOW , 1 - HIGH";
+            sw = rw;
+        }VW_STATE [0:0]= 0x00;
+
+        field {
+            desc = "Reserved";
+            sw = r;
+        }reserverd [7:1]= 0x00;
+    }VW_0_STATE @ 0x04; // offset 4h
+
+    reg {
+        name = "Virtual Wires 1 State";
+        desc = "Virtual Wires State";
+        regwidth = 8;
+
+        field {
+            desc = "Virtual Wires State.Indicates the state of the vGPIO: 0 - LOW , 1 - HIGH";
+            sw = rw;
+        }VW_STATE [0:0]= 0x00;
+
+        field {
+            desc = "Reserved";
+            sw = r;
+        }reserverd [7:1]= 0x00;
+    }VW_1_STATE @ 0x05; // offset 5h
+
+    reg {
+        name = "Virtual Wires 2 State";
+        desc = "Virtual Wires State";
+        regwidth = 8;
+
+        field {
+            desc = "Virtual Wires State.Indicates the state of the vGPIO: 0 - LOW , 1 - HIGH";
+            sw = rw;
+        }VW_STATE [0:0]= 0x00;
+
+        field {
+            desc = "Reserved";
+            sw = r;
+        }reserverd [7:1]= 0x00;
+    }VW_2_STATE @ 0x06; // offset 6h
+
+    reg {
+        name = "Virtual Wires 2 State";
+        desc = "Virtual Wires State";
+        regwidth = 8;
+
+        field {
+            desc = "Virtual Wires State.Indicates the state of the vGPIO: 0 - LOW , 1 - HIGH";
+            sw = rw;
+        }VW_STATE [0:0]= 0x00;
+
+        field {
+            desc = "Reserved";
+            sw = r;
+        }reserverd [7:1]= 0x00;
+    }VW_3_STATE @ 0x07; // offset 7h
+
+    reg {
+        name = "Virtual Wires 0 Direction";
+        desc = "Virtual Wires Direction";
+        regwidth = 8;
+
+        field {
+            desc = "Virtual Wires Direction. Indicates if the VW is an input or output: 0 - Input, 1 - Output, 2 - Hi-Z, 3 - Input & Output";
+            sw = rw;
+        }VW_DIRECTION [1:0]= 0x0;
+    }VW_0_DIRECTION @ 0x08; // offset 8h
+
+    reg {
+        name = "Virtual Wires 1 Direction";
+        desc = "Virtual Wires Direction";
+        regwidth = 8;
+
+        field {
+            desc = "Virtual Wires Direction. Indicates if the VW is an input or output: 0 - Input, 1 - Output, 2 - Hi-Z, 3 - Input & Output";
+            sw = rw;
+        }VW_DIRECTION [1:0]= 0x1;
+    }VW_1_DIRECTION @ 0x09; // offset 9h
+
+    reg {
+        name = "Virtual Wires 2 Direction";
+        desc = "Virtual Wires Direction";
+        regwidth = 8;
+
+        field {
+            desc = "Virtual Wires Direction. Indicates if the VW is an input or output: 0 - Input, 1 - Output, 2 - Hi-Z, 3 - Input & Output";
+            sw = rw;
+        }VW_DIRECTION [1:0]= 0x2;
+    }VW_2_DIRECTION @ 0x0A; // offset Ah
+
+    reg {
+        name = "Virtual Wires 3 Direction";
+        desc = "Virtual Wires Direction";
+        regwidth = 8;
+
+        field {
+            desc = "Virtual Wires Direction. Indicates if the VW is an input or output: 0 - Input, 1 - Output, 2 - Hi-Z, 3 - Input & Output";
+            sw = rw;
+        }VW_DIRECTION [1:0]= 0x3;
+    }VW_3_DIRECTION @ 0x0B; // offset Bh
+
+};
+
+`endif

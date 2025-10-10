@@ -1,0 +1,17 @@
+`ifndef MMIO_STRUCTURE_RDL
+`define MMIO_STRUCTURE_RDL
+
+regfile MMIO_structure {
+    name = "OBMF_Generic_MMIO";
+    desc = "Memory Mapped I/O Space";
+    structure_version   = "1.0";
+
+    channel_type_guid   = 0x2354_AB22_9871_543A_89AB_BC56_09BC_7567; //MMIO
+    read_supported      = true;                 // Indicates if OBMF-ICP Secondary supports Read transactions
+    write_supported     = false;                // Indicates if OBMF-ICP Secondary supports Write transactions
+
+    MMIO_SPACE_REG MMIO_SPACE[1] @ 0x0000;
+
+};
+
+`endif
