@@ -1,0 +1,276 @@
+`ifndef DISCOVERY_STRUCTURE_RDL
+`define DISCOVERY_STRUCTURE_RDL
+
+regfile Discovery_structure {
+    name = "OBMF-ICP Discovery Structure";
+    desc = "This structure must be provided by the OBMF-ICP Secondary on Channel 0. The Primary can read this content to obtain the list of 
+    all the other channels that the OBMF-ICP Secondary expects to be supported by the Primary. Some of these channels may be mandatory, while 
+    some are optional. The Primary should enable all the necessary channels by writing to the “Enable” fields in this data structure. In addition to the 
+    channel list, this discovery structure allows OBMF-ICP endpoints to establish OBMF-ICP protocol version compatibility and other capabilities.";
+
+    structure_version = "1.0";
+    obmf_icp_version = "1.0";
+
+    channel_type_guid   = 0x51a7_a920_bbc6_45ef_92f0_5902_cb6f_2889;  //128bit
+    read_supported      = true;                 // Indicates if this device supports Read transactions for this channel
+    write_supported     = true;                 // Indicates if this device supports Write transactions for this channel (must be true for Channel 0)
+
+    reg {
+        name = "OBMF-ICP Protocol Version";
+        desc = "OBMF-ICP Protocol Version supported by the device";
+        regwidth = 32;
+
+        field {
+            desc = "OBMF-ICP Protocol Version supported by the device";
+            sw = r;
+        } OBMF_VER [31:0]= 0x00;
+
+    } OBMF_VER @ 0x00;
+
+
+    reg {
+        name = "Maximum Read Size";
+        desc = "Defines the maximum Read response payload size that should be used. READ_SIZE_PRI and READ_SIZE_SEC define the capabilities 
+        of both parties and the actual size used is the minimum of both values. The same size is used in both directions 
+        of communication.";
+        regwidth = 64;
+
+        field {
+            desc = "Indicates the total number of bytes for a Read transaction that the OBMF-ICP Secondary supports. OBMF-ICP Primary must 
+            obey this limit.";
+            sw = r;
+        } READ_SIZE_SEC [31:0] = 64;
+
+        field {
+            desc = "Indicates the total number of bytes for a Read transaction that the OBMF-ICP Primary supports. A minimum size that every 
+            OBMF-ICP Primary shall support is 64-bytes and this should be the default value of this register. OBMF-ICP Primary may write to 
+            this field to allows larger Read sizes to be initiated by OBMF-ICP Secondary.";
+            sw = rw;
+        } READ_SIZE_PRI [63:32] = 64;
+
+    } READ_SIZE;
+
+    reg {
+        name = "Maximum Write Size";
+        desc = "Defines the maximum Write request payload size that should be used. WRITE_SIZE_PRI and WRITE_SIZE_SEC define the capabilities 
+        of both parties and the actual size used is the minimum of both values. The same size is used in both directions of communication.";
+        regwidth = 64;
+
+        field {
+            desc = "Indicates the total number of bytes for a Write transaction that the OBMF-ICP Secondary supports.";
+            sw = r;
+        } WRITE_SIZE_SEC [31:0] = 64;
+
+        field {
+            desc = "Indicates the total number of bytes for a Write transaction that the OBMF-ICP Primary supports. A minimum size that every OBMF-ICP Primary shall support is 64-bytes and this should be the default value of this register.";
+            sw = rw;
+        } WRITE_SIZE_PRI [63:32] = 64;
+
+    } WRITE_SIZE;
+
+    reg {
+        name = "Maximum Channel Number";
+        desc = "The last channel number listed in the channel list of this Discovery Structure. Note that Channel 0 is reserved for Control Channel and does not require 
+        discovery while all other channels are sequentially numbered from 1 to MAX_CHANNEL_NO.";
+        regwidth = 32;
+
+        field {
+            desc = "The last channel number listed in the channel list of this Discovery Structure. Note that channel 0 is reserved for Control Channel 
+            and does not require discovery while all other channels are numbered from 1 to MAX_CHANNEL_NO.";
+            sw = r;
+        } MAX_CHANNEL_NO [31:0]= 0x00;
+    } MAX_CHANNEL_NO;
+
+    regfile {
+        name = "Channel 1";
+        desc = "Channel 1 Discovery Structure";
+
+        reg {
+            name = "Channel GUID";
+            desc = "Channel GUID - indicates the type of channel/service that should be supported by OBMF-ICP Primary.";
+            regwidth = 128 ;
+            field {
+                desc = "Channel GUID - Please see the proper file with this GUID for detailed definition of this structure.";
+                sw = r;
+            } GUID[127:0]= 0x1234_2316_8094_F001_8090_0124_5678_90AB; //FLASH
+        } CHANNEL_GUID @ 0x00;
+
+        reg {
+            name = "Channel Configuration";
+            desc = "Channel Configuration";
+            regwidth = 32;
+
+            field {
+                desc = "Channel Number";
+                sw = r;
+            } CHANNEL_NO [7:0]= 0x01;
+
+            field {
+                desc = "Indicates whether this channel is mandatory for the OBMF-ICP Secondary to be fully functional.";
+                sw = r;
+            } MANDATORY [8:8]= 0x1;
+
+            field {
+                desc = "Indicates whether this channel is enabled: 0 = DISABLED, 1 = ENABLED. OBMF-ICP Primary should write to 
+                this field to enable the communication over this channel.";
+                sw = rw;
+            } ENABLED [9:9]= 0x00; 
+        } CHANNEL_CFG @ 0x10;
+
+    } CHANNEL_1 @ 0x100; // Channel 1 starts at offset 0x100
+
+    regfile {
+        name = "Channel 2";
+        desc = "Channel 2 Discovery Structure";
+
+        reg {
+            name = "Channel GUID";
+            desc = "Channel GUID - indicates the type of channel/service that should be supported by OBMF-ICP Primary.";
+            regwidth = 128 ;
+            field {
+                desc = "Channel GUID - Please see the proper file with this GUID for detailed definition of this structure.";
+                sw = r;
+            } GUID[127:0]= 0x0899_ABC22_8902_3451_89AB_BC56_09BC_450F; //VW
+        } CHANNEL_GUID @ 0x00;
+
+        reg {
+            name = "Channel Configuration";
+            desc = "Channel Configuration";
+            regwidth = 32;
+
+            field {
+                desc = "Channel Number";
+                sw = r;
+            } CHANNEL_NO [7:0]= 0x01;
+
+            field {
+                desc = "Indicates whether this channel is mandatory for the OBMF-ICP Secondary to be fully functional.";
+                sw = r;
+            } MANDATORY [8:8]= 0x1;
+
+            field {
+                desc = "Indicates whether this channel is enabled: 0 = DISABLED, 1 = ENABLED. OBMF-ICP Primary should write into this 
+                field to enable the communication over this channel.";
+                sw = rw;
+            } ENABLED [9:9]= 0x00; 
+        } CHANNEL_CFG @ 0x10;
+
+    } CHANNEL_2 @ 0x200;
+
+    regfile {
+        name = "Channel 3";
+        desc = "Channel 3 Discovery Structure";
+
+        reg {
+            name = "Channel GUID";
+            desc = "Channel GUID - indicates the type of channel/service that should be supported by OBMF-ICP Primary.";
+            regwidth = 128 ;
+            field {
+                desc = "Channel GUID - Please see the proper file with this GUID for detailed definition of this structure.";
+                sw = r;
+            } GUID[127:0]= 0x3456_8866_AB34_567f_89AB_3242_1235_6789; // RTC
+        } CHANNEL_GUID @ 0x00;
+
+        reg {
+            name = "Channel Configuration";
+            desc = "Channel Configuration";
+            regwidth = 32;
+
+            field {
+                desc = "Channel Number";
+                sw = r;
+            } CHANNEL_NO [7:0]= 0x01;
+
+            field {
+                desc = "Indicates whether this channel is mandatory for the OBMF-ICP Secondary to be fully functional.";
+                sw = r;
+            } MANDATORY [8:8]= 0x1;
+
+            field {
+                desc = "Indicates whether this channel is enabled: 0 = DISABLED, 1 = ENABLED. OBMF-ICP Primary should write into 
+                this field to enable the communication over this channel.";
+                sw = rw;
+            } ENABLED [9:9]= 0x00; 
+        } CHANNEL_CFG @ 0x10;
+
+    } CHANNEL_3 @ 0x300;
+
+    regfile {
+        name = "Channel 4";
+        desc = "Channel 4 Discovery Structure";
+
+        reg {
+            name = "Channel GUID";
+            desc = "Channel GUID - indicates the type of channel/service that should be supported by OBMF-ICP Primary.";
+            regwidth = 128 ;
+            field {
+                desc = "Channel GUID - Please see the proper file with this GUID for detailed definition of this structure.";
+                sw = r;
+            } GUID[127:0]= 0xc143_a289_0473_4080_9c42_1e8c_9415_35b2; // UART
+        } CHANNEL_GUID @ 0x00;
+
+        reg {
+            name = "Channel Configuration";
+            desc = "Channel Configuration";
+            regwidth = 32;
+
+            field {
+                desc = "Channel Number";
+                sw = r;
+            } CHANNEL_NO [7:0]= 0x01;
+
+            field {
+                desc = "Indicates whether this channel is mandatory for the OBMF-ICP Secondary to be fully functional.";
+                sw = r;
+            } MANDATORY [8:8]= 0x1;
+
+            field {
+                desc = "Indicates whether this channel is enabled: 0 = DISABLED, 1 = ENABLED. OBMF-ICP Primary should write into 
+                this field to enable the communication over this channel.";
+                sw = rw;
+            } ENABLED [9:9]= 0x00; 
+        } CHANNEL_CFG @ 0x10;
+
+    } CHANNEL_4 @ 0x400;
+
+    regfile {
+        name = "Channel 5";
+        desc = "Channel 5 Discovery Structure";
+
+        reg {
+            name = "Channel GUID";
+            desc = "Channel GUID - indicates the type of channel/service that should be supported by OBMF-ICP Primary.";
+            regwidth = 128 ;
+            field {
+                desc = "Channel GUID - Please see the proper file with this GUID for detailed definition of this structure.";
+                sw = r;
+            } GUID[127:0]= 0x2354_AB22_9871_543A_89AB_BC56_09BC_7567; //MMIO
+        } CHANNEL_GUID @ 0x00;
+
+        reg {
+            name = "Channel Configuration";
+            desc = "Channel Configuration";
+            regwidth = 32;
+
+            field {
+                desc = "Channel Number";
+                sw = r;
+            } CHANNEL_NO [7:0]= 0x01;
+
+            field {
+                desc = "Indicates whether this channel is mandatory for the OBMF-ICP Secondary to be fully functional.";
+                sw = r;
+            } MANDATORY [8:8]= 0x1;
+
+            field {
+                desc = "Indicates whether this channel is enabled: 0 = DISABLED, 1 = ENABLED. OBMF-ICP Primary should write into 
+                this field to enable the communication over this channel.";
+                sw = rw;
+            } ENABLED [9:9]= 0x00; 
+        } CHANNEL_CFG @ 0x10;
+
+    } CHANNEL_5 @ 0x500;
+
+};
+
+`endif

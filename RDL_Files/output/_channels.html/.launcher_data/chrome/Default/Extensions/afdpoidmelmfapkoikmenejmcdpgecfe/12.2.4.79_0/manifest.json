@@ -1,0 +1,61 @@
+{
+   "action": {
+      "browser_style": false,
+      "default_icon": {
+         "16": "img/16x16.png",
+         "24": "img/24x24.png",
+         "32": "img/32x32.png"
+      },
+      "default_title": "Aternity Extension V3"
+   },
+   "author": "Aternity",
+   "background": {
+      "service_worker": "background.js"
+   },
+   "content_scripts": [ {
+      "all_frames": true,
+      "js": [ "content.js" ],
+      "match_about_blank": true,
+      "matches": [ "http://*/*", "https://*/*" ],
+      "run_at": "document_start"
+   } ],
+   "content_security_policy": {
+      "base-uri": "none",
+      "child-src": "none",
+      "connect-src": "none",
+      "default-src": "none",
+      "font-src": "none",
+      "form-action": "none",
+      "frame-ancestors": "none",
+      "frame-src": "none",
+      "img-src": "none",
+      "manifest-src": "none",
+      "media-src": "none",
+      "object-src": "none",
+      "report-uri": "none",
+      "sandbox": "sandbox allow-scripts; allow-same-origin",
+      "script-src": "self",
+      "style-src": "none",
+      "worker-src": "none"
+   },
+   "description": "Application performance monitoring, part of Aternity Agent",
+   "homepage_url": "https://help.aternity.com/csh?Product=latest&topicname=console_admin_privacy_web_addon.html",
+   "host_permissions": [ "http://*/*", "https://*/*" ],
+   "icons": {
+      "128": "img/128x128.png",
+      "16": "img/16x16.png",
+      "24": "img/24x24.png",
+      "32": "img/32x32.png",
+      "48": "img/48x48.png",
+      "64": "img/64x64.png",
+      "96": "img/96x96.png"
+   },
+   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAyfdkIEScpDtWQPRjabTURzyXNQA5K0PdDzdgwZSHwyv33SDHiWqwHl+2cC8DUXCJjteDY7x3q5bX0iSohyNOtGHd6XjTD4gw5OR9q+JEcqC4V+QffK8eQcRNG5qRQgC/dEUC0zp8HKt43XDUWFHiofXdh7OQ3e1wPJlY8sGCWC0kDYrV5+kLROIyB5qU7NWWo6paJ5vHyWgRjPQWKW5p1GCSU2DfCUpbBXyOz0smJML+MAL11/FPf/GF7ZCO/fU2F1BH4QLYp4TkS7M8M0b6fEaP6MHjbnZ3uSJjq+rKYr/KdZFWRWLusNKcUtjT6zffXskviKTpnhjYRoXlWKTFcwIDAQAB",
+   "manifest_version": 3,
+   "minimum_chrome_version": "88",
+   "name": "Aternity Extension",
+   "permissions": [ "nativeMessaging", "webNavigation", "webRequest", "tabs", "idle", "management", "downloads", "storage", "scripting" ],
+   "short_name": "Aternity",
+   "update_url": "https://chromestore.aternity.com/update/crx",
+   "version": "12.2.4.79"
+}

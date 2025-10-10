@@ -1,0 +1,46 @@
+{
+    "type": "object",
+    "properties": {
+        "hostname": {
+            "type": "string"
+        },
+        "username": {
+            "type": "string"
+        },
+        "device_id": {
+            "type": "string"
+        },
+        "os_version": {
+            "type": "string"
+        },
+        "browser_type": {
+            "type": "string"
+        },
+        "domain_name": {
+            "type": "string"
+        },
+        "rollout_group": {
+            "type": "string"
+        },
+        "download_location_info": {
+            "type": "string"
+        },
+        "force_incognito": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "browser_id": {
+                        "type": "string"
+                    },
+                    "is_secure_preferences": {
+                        "type": "boolean"
+                    },
+                    "timestamp": {
+                        "type": "string"
+                    }
+                }
+            }
+        }
+    }
+}

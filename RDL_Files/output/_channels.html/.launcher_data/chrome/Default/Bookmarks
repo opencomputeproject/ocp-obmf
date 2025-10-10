@@ -1,0 +1,1452 @@
+{
+   "checksum": "faea2c4e2f7652f7334103eda4bc2de5",
+   "roots": {
+      "bookmark_bar": {
+         "children": [ {
+            "date_added": "13285127110425011",
+            "date_last_used": "0",
+            "guid": "c405b978-c056-4661-b7d9-d22d8e552fe4",
+            "id": "35",
+            "name": "Relocation",
+            "type": "url",
+            "url": "https://employeecontent.intel.com/entrypage/default.aspx?nodeid=97004592-15c8-4ef6-88b7-6fbe2398f4ba"
+         }, {
+            "date_added": "13285127110433373",
+            "date_last_used": "0",
+            "guid": "dc8e7741-ee17-4ba2-863d-2f13122a6114",
+            "id": "36",
+            "name": "Suggested Sites",
+            "type": "url",
+            "url": "https://ieonline.microsoft.com/#ieslice"
+         }, {
+            "children": [ {
+               "children": [ {
+                  "date_added": "13285127110427011",
+                  "date_last_used": "0",
+                  "guid": "d3399255-e4de-4b04-a833-6a9284a780c6",
+                  "id": "39",
+                  "name": "AT6 - FAS",
+                  "type": "url",
+                  "url": "http://icg.iil.intel.com/sites/LAD%20SW/AT6/Shared%20Documents/Forms/AllItems.aspx?RootFolder=%2fsites%2fLAD%20SW%2fAT6%2fShared%20Documents%2fFAS&View=%7b141522F9%2dCF63%2d4AF8%2d9DA3%2dC63286631FD8%7d"
+               }, {
+                  "date_added": "13285127110428051",
+                  "date_last_used": "0",
+                  "guid": "fca1226d-4198-4564-8760-c5c434f5bc32",
+                  "id": "40",
+                  "name": "AT7 (mainly JER)",
+                  "type": "url",
+                  "url": "http://moss.ger.ith.intel.com/sites/LAD_SW/AMT_2010_%20Client/default.aspx"
+               }, {
+                  "date_added": "13285127110429009",
+                  "date_last_used": "0",
+                  "guid": "f5585cad-ef09-4296-af21-919bd7320a79",
+                  "id": "41",
+                  "name": "Client FW Arch Work Group Share Point Site",
+                  "type": "url",
+                  "url": "http://carmel.fm.intel.com/sites/CPD-SWE/SSAG/PCHFWArchWG/default.aspx"
+               } ],
+               "date_added": "13404594658046079",
+               "date_last_used": "0",
+               "date_modified": "0",
+               "guid": "ec7b4469-8cb9-4c31-9d4b-aff1fcef3a6a",
+               "id": "38",
+               "name": "AT FW",
+               "type": "folder"
+            }, {
+               "date_added": "13285127110507365",
+               "date_last_used": "0",
+               "guid": "6a4874de-3864-4880-8627-a3291c7d726a",
+               "id": "42",
+               "name": "Always Authenticated Firmware - Home",
+               "type": "url",
+               "url": "https://sharepoint.amr.ith.intel.com/sites/MDGArchTech/aaf/SitePages/Home.aspx"
+            }, {
+               "date_added": "13285127110548190",
+               "date_last_used": "0",
+               "guid": "1e66de9d-65d4-4e06-827f-c690a86267cc",
+               "id": "43",
+               "name": "Avail Learnings",
+               "type": "url",
+               "url": "about:Tabs"
+            }, {
+               "children": [ {
+                  "date_added": "13285127110433373",
+                  "date_last_used": "0",
+                  "guid": "5040e5cb-ee6c-48c0-a95b-e3f188a880dd",
+                  "id": "45",
+                  "name": "BIOS Teamsite",
+                  "type": "url",
+                  "url": "http://moss.amr.ith.intel.com/sites/APD_BIOS/default.aspx"
+               }, {
+                  "date_added": "13285127110434373",
+                  "date_last_used": "0",
+                  "guid": "01c8a617-9e12-40d3-94ee-3b3b1b14f39e",
+                  "id": "46",
+                  "name": "Romley BIOS PDT",
+                  "type": "url",
+                  "url": "http://moss.amr.ith.intel.com/sites/APD_BIOS/Projects/Forms/AllItems.aspx"
+               } ],
+               "date_added": "13404594658046294",
+               "date_last_used": "0",
+               "date_modified": "0",
+               "guid": "861e1bdd-ab08-4d66-8e46-012c1cb54687",
+               "id": "44",
+               "name": "BIOS",
+               "type": "folder"
+            }, {
+               "date_added": "13285127110573991",
+               "date_last_used": "0",
+               "guid": "20e296e1-50ab-4b8d-8ff4-c2b730f58cbd",
+               "id": "47",
+               "name": "CSE-ME WG",
+               "type": "url",
+               "url": "http://moss.amr.ith.intel.com/sites/dpa/CSEMEWG/default.aspx?InstanceID=12"
+            }, {
+               "date_added": "13285127110551194",
+               "date_last_used": "0",
+               "guid": "94af67d6-5104-485b-b9f0-fab549e91b9b",
+               "id": "48",
+               "name": "Castle Crest - Home - IGK",
+               "type": "url",
+               "url": "https://sharepoint.ger.ith.intel.com/sites/ServerGdansk/Projects/CastleCrest/SitePages/Home.aspx?RootFolder=%2Fsites%2FServerGdansk%2FProjects%2FCastleCrest%2FShared%20Documents%2FDesign&FolderCTID=0x01200056A722D123B33444A9B8B5BD405D50EB&View={5FDEC788-C064-487A-A1F0-79CD2FAE5413}"
+            }, {
+               "date_added": "13285127110566382",
+               "date_last_used": "0",
+               "guid": "ea73b369-c150-4026-9c29-51bf44887a93",
+               "id": "49",
+               "name": "Cisco Unified CM Console - US",
+               "type": "url",
+               "url": "https://10.192.40.38/ccmuser/showHome.do"
+            }, {
+               "date_added": "13285127110567381",
+               "date_last_used": "0",
+               "guid": "116a85b9-6563-4b90-aa9f-4ca603e078a9",
+               "id": "50",
+               "name": "Common Core Arch",
+               "type": "url",
+               "url": "http://moss.amr.ith.intel.com/sites/EPD/CCT/default.aspx"
+            }, {
+               "date_added": "13285127110573991",
+               "date_last_used": "0",
+               "guid": "3f0f20b0-4693-4744-9a67-dcfe4e18507d",
+               "id": "51",
+               "name": "DCMI Spec - Internet Portal Data Center",
+               "type": "url",
+               "url": "http://moss.amr.ith.intel.com/sites/CCGSSE/IPDC/default.aspx"
+            }, {
+               "date_added": "13285127110578990",
+               "date_last_used": "0",
+               "guid": "ac40a591-709d-4ca8-b34a-985453dec233",
+               "id": "52",
+               "name": "Home - Circuit [For Employees@Intel]",
+               "type": "url",
+               "url": "https://employeeportal.intel.com/irj/portal"
+            }, {
+               "children": [ {
+                  "date_added": "13285127110456797",
+                  "date_last_used": "0",
+                  "guid": "7ab74057-5a6f-4fbf-bc29-cf4fbde4ce56",
+                  "id": "54",
+                  "name": "CSE - Home",
+                  "type": "url",
+                  "url": "https://sharepoint.amr.ith.intel.com/sites/SourceDocs/Chassis1/CSE/SitePages/Home.aspx"
+               }, {
+                  "date_added": "13285127110453792",
+                  "date_last_used": "0",
+                  "guid": "c4ef257f-2724-4463-aec0-a28b27cafccd",
+                  "id": "55",
+                  "name": "Castle Crest Planning - Home",
+                  "type": "url",
+                  "url": "https://sharepoint.amr.ith.intel.com/sites/DSD-SSE/pmdash/Castle_Crest/SitePages/Home.aspx"
+               }, {
+                  "date_added": "13285127110454797",
+                  "date_last_used": "0",
+                  "guid": "4d1d766c-9011-4207-93f6-2c6873f2f467",
+                  "id": "56",
+                  "name": "Chassis WG - Home",
+                  "type": "url",
+                  "url": "https://sharepoint.amr.ith.intel.com/sites/MDGArchMain/Converged/chassisWG/SitePages/Home.aspx"
+               }, {
+                  "date_added": "13285127110457797",
+                  "date_last_used": "0",
+                  "guid": "108c902c-e9c0-4eea-b23c-a5bfe0b55bcb",
+                  "id": "57",
+                  "name": "DNV registers",
+                  "type": "url",
+                  "url": "http://dnvweb.fc.intel.com/eamcshan/html/"
+               }, {
+                  "date_added": "13285127110457797",
+                  "date_last_used": "0",
+                  "guid": "0ca21ff5-fb2e-4394-891b-195901664f64",
+                  "id": "58",
+                  "name": "Denverton CSpec Drafts - Home",
+                  "type": "url",
+                  "url": "https://sharepoint.amr.ith.intel.com/sites/DNVARCH/SitePages/Home.aspx"
+               }, {
+                  "date_added": "13285127110459797",
+                  "date_last_used": "0",
+                  "guid": "359bbde0-2538-457d-a601-2b599f315f30",
+                  "id": "59",
+                  "name": "HSD Skylake Server Document Explorer",
+                  "type": "url",
+                  "url": "https://vthsd.sc.intel.com/hsd/skylake_server/#document/doctree.aspx"
+               }, {
+                  "date_added": "13285127110458797",
+                  "date_last_used": "0",
+                  "guid": "5f3ef22a-cec2-4b01-9b17-e5bd9213eb5f",
+                  "id": "60",
+                  "name": "Harrisonville - Home",
+                  "type": "url",
+                  "url": "https://sharepoint.amr.ith.intel.com/sites/DCSGDXT/Harrisonville/SitePages/Home.aspx"
+               }, {
+                  "date_added": "13285127110460798",
+                  "date_last_used": "0",
+                  "guid": "e86f50f7-5053-4f2d-8374-caace6a0fb1c",
+                  "id": "61",
+                  "name": "IE ROM FAS & PRD",
+                  "type": "url",
+                  "url": "https://sharepoint.amr.ith.intel.com/sites/DSD-SSE/SSE%20Projects/castlecrest/SitePages/Home.aspx"
+               }, {
+                  "date_added": "13285127110461816",
+                  "date_last_used": "0",
+                  "guid": "8500c08c-7343-45df-a1ea-3e0a64ac556b",
+                  "id": "62",
+                  "name": "Innovation Engine Sol'n Development Team - Home",
+                  "type": "url",
+                  "url": "https://sharepoint.amr.ith.intel.com/sites/IE-SDT/SitePages/Home.aspx"
+               }, {
+                  "date_added": "13285127110461816",
+                  "date_last_used": "0",
+                  "guid": "b907b267-d8cd-4f5a-bfe6-8e65ce2ae3b1",
+                  "id": "63",
+                  "name": "Lewisburg Architecture - Home",
+                  "type": "url",
+                  "url": "https://sharepoint.amr.ith.intel.com/sites/LBGARCH/SitePages/Home.aspx"
+               }, {
+                  "date_added": "13285127110462798",
+                  "date_last_used": "0",
+                  "guid": "c10e8602-55eb-4763-be7d-ac1287b0848d",
+                  "id": "64",
+                  "name": "ME FW HSD",
+                  "type": "url",
+                  "url": "https://vthsd.igk.intel.com/hsd/dsd_alm/#include/home.aspx"
+               }, {
+                  "date_added": "13285127110463800",
+                  "date_last_used": "0",
+                  "guid": "5aca8444-9650-44cf-8d1f-01effa43f7a1",
+                  "id": "65",
+                  "name": "OR Team IE Scrum site",
+                  "type": "url",
+                  "url": "https://sharepoint.amr.ith.intel.com/sites/DSD-SSE/Agile_Process%20Site/Team%20Pages/TeamIE/SitePages/Home.aspx"
+               }, {
+                  "date_added": "13285127110464800",
+                  "date_last_used": "0",
+                  "guid": "a5e1c430-3777-4ee9-a08b-65bfd424f6e1",
+                  "id": "66",
+                  "name": "P4Web - --CSE_FW-3-3.0-3.0_JER-fw-src-rom- - p4web27.devtools.intel.com2751",
+                  "type": "url",
+                  "url": "https://p4web27.devtools.intel.com:2751/@md=d&cd=//CSE_FW/3/3.0/3.0_JER/fw/src/rom/&c=ZtP@//CSE_FW/3/3.0/3.0_JER/fw/src/rom/?ac=83"
+               }, {
+                  "date_added": "13285127110465891",
+                  "date_last_used": "0",
+                  "guid": "89b5bfb4-1e01-4a51-b45b-c1f663423e69",
+                  "id": "67",
+                  "name": "P4Web-spt-Cspec-IE",
+                  "type": "url",
+                  "url": "https://p4web27.devtools.intel.com:2751/@md=d&cd=//depot/projects/spt/Cspec/&c=Ueb@//depot/projects/spt/Cspec/IE/?ac=83"
+               }, {
+                  "date_added": "13285127110466912",
+                  "date_last_used": "0",
+                  "guid": "45db7f7a-ef49-4b87-842c-dd77c72305a8",
+                  "id": "68",
+                  "name": "SPS FW FAS Sharepoint",
+                  "type": "url",
+                  "url": "https://sharepoint.amr.ith.intel.com/sites/CastleCrest/Shared%20Documents/Forms/Standard.aspx?RootFolder=%2fsites%2fCastleCrest%2fShared%20Documents%2fDesign%2fFAS&FolderCTID=0x01200034F97BC80B46F24C8DC7FE18CA9DF5ED"
+               }, {
+                  "date_added": "13285127110465891",
+                  "date_last_used": "0",
+                  "guid": "d57a7650-2f88-406e-8fc8-d744277e1ca7",
+                  "id": "69",
+                  "name": "Secure Enclaves - Home",
+                  "type": "url",
+                  "url": "https://sharepoint.amr.ith.intel.com/sites/SecureEnclaves/SitePages/Home.aspx"
+               }, {
+                  "date_added": "13285127110455797",
+                  "date_last_used": "0",
+                  "guid": "c825ca93-e642-4336-91c0-20848bdb0500",
+                  "id": "70",
+                  "name": "client CSE-CSME IP PDT",
+                  "type": "url",
+                  "url": "https://sharepoint.ger.ith.intel.com/sites/SPT_FW_Execution/SitePages/Home.aspx"
+               }, {
+                  "date_added": "13285127110499868",
+                  "date_last_used": "0",
+                  "guid": "e3d50570-85dd-4103-8ac2-e9c182fe14d3",
+                  "id": "71",
+                  "name": "spt-Cspec",
+                  "type": "url",
+                  "url": "https://p4web27.devtools.intel.com:2751/@md=d&cd=//depot/projects/spt/&c=yuC@//depot/projects/spt/Cspec/?ac=83"
+               }, {
+                  "date_added": "13285127110500868",
+                  "date_last_used": "0",
+                  "guid": "4ac9179b-378a-4fb9-9496-de2f6c4717f8",
+                  "id": "72",
+                  "name": "spt-FW&SW Specs",
+                  "type": "url",
+                  "url": "https://p4web27.devtools.intel.com:2751/@md=d&cd=//depot/projects/spt/FW_SW%20Specs/&rt=s&thv=d&c=doD@//depot/projects/spt/FW_SW%20Specs/CSME/?ac=83"
+               } ],
+               "date_added": "13404594658046572",
+               "date_last_used": "0",
+               "date_modified": "0",
+               "guid": "20a5d0bb-aa6d-462a-b93e-c75322c12169",
+               "id": "53",
+               "name": "IE & CSME",
+               "type": "folder"
+            }, {
+               "children": [ {
+                  "date_added": "13285127110502883",
+                  "date_last_used": "0",
+                  "guid": "e9e7b34b-760f-4dfd-97f8-538e88ec72c9",
+                  "id": "74",
+                  "name": " Intel Technology Poland Forum",
+                  "type": "url",
+                  "url": "http://moss.ger.ith.intel.com/sites/ITPForum/default.aspx"
+               }, {
+                  "date_added": "13285127110505359",
+                  "date_last_used": "0",
+                  "guid": "ce88374f-c3e8-448f-951d-01a200e5ef97",
+                  "id": "75",
+                  "name": "ITP Technical Community - Planet Blue",
+                  "type": "url",
+                  "url": "http://planetblue.ith.intel.com/community_of_practice/itp_technical_community/default.aspx"
+               }, {
+                  "date_added": "13285127110503868",
+                  "date_last_used": "0",
+                  "guid": "f82e01a9-7743-4163-aeed-380bac4e8628",
+                  "id": "76",
+                  "name": "Innovation Forum",
+                  "type": "url",
+                  "url": "http://moss.ger.ith.intel.com/sites/MCDProjects/INNOVATION_FORUM/default.aspx"
+               }, {
+                  "date_added": "13285127110504889",
+                  "date_last_used": "0",
+                  "guid": "daab7465-f005-4bc5-b32c-d6e76bc063a2",
+                  "id": "77",
+                  "name": "Intel Technology Poland Forum",
+                  "type": "url",
+                  "url": "http://moss.ger.ith.intel.com/sites/ITPForum/default.aspx"
+               }, {
+                  "date_added": "13285127110506365",
+                  "date_last_used": "0",
+                  "guid": "34c98404-599f-4a2c-8d0f-60a9c0187264",
+                  "id": "78",
+                  "name": "Staff Meeting Site",
+                  "type": "url",
+                  "url": "http://moss.ger.ith.intel.com/sites/SVRFWGK/Administration/default.aspx"
+               } ],
+               "date_added": "13404594658047259",
+               "date_last_used": "0",
+               "date_modified": "0",
+               "guid": "b3ca99a8-3c1a-4dd2-ac97-f3209695e75d",
+               "id": "73",
+               "name": "IGK",
+               "type": "folder"
+            }, {
+               "children": [ {
+                  "date_added": "13285127110509367",
+                  "date_last_used": "0",
+                  "guid": "17f7344d-9b33-43b9-b5d7-642be947350a",
+                  "id": "80",
+                  "name": "10nm HAS Docs",
+                  "type": "url",
+                  "url": "https://sharepoint.amr.ith.intel.com/sites/10nmCon/HAS/default.aspx"
+               }, {
+                  "date_added": "13285127110509367",
+                  "date_last_used": "0",
+                  "guid": "3273c865-68a1-4b08-abd7-55cbd2cb1cfb",
+                  "id": "81",
+                  "name": "10nm LZ - Eagleport LZ",
+                  "type": "url",
+                  "url": "https://hsdes.intel.com/home/default.html#magazine?id=1201583113&contentId=1209065272"
+               }, {
+                  "date_added": "13285127110510366",
+                  "date_last_used": "0",
+                  "guid": "3f5e2260-90ba-4690-803f-deb3345704ad",
+                  "id": "82",
+                  "name": "BMC FW EAS - All Documents",
+                  "type": "url",
+                  "url": "https://sharepoint.amr.ith.intel.com/sites/commoncore/BIOS_FW%20Sharing%20Information/Forms/AllItems.aspx?RootFolder=%2Fsites%2Fcommoncore%2FBIOS%5FFW%20Sharing%20Information%2FFW%2FFW%5FEAS"
+               }, {
+                  "date_added": "13285127110511366",
+                  "date_last_used": "0",
+                  "guid": "1340ac6c-dcdd-4aa5-b91e-6c39ef7e3371",
+                  "id": "83",
+                  "name": "DCG Roadmap - All Documents",
+                  "type": "url",
+                  "url": "https://sharepoint.amr.ith.intel.com/sites/DSP/DCG%20Roadmap/Forms/AllItems.aspx"
+               }, {
+                  "date_added": "13285127110512367",
+                  "date_last_used": "0",
+                  "guid": "966d44cb-de56-473e-aa4f-51448cb1a41a",
+                  "id": "84",
+                  "name": "Emmitsburg LZ",
+                  "type": "url",
+                  "url": "https://hsdes.intel.com/home/default.html#magazine?id=1209190125&contentId=1405500333"
+               }, {
+                  "date_added": "13285127110514368",
+                  "date_last_used": "0",
+                  "guid": "787522c9-fc89-4fc4-9fdb-f3648d368276",
+                  "id": "85",
+                  "name": "Home - KNH Architecture",
+                  "type": "url",
+                  "url": "https://sharepoint.amr.ith.intel.com/sites/MIC_Arch/KNH/default.aspx"
+               }, {
+                  "date_added": "13285127110515883",
+                  "date_last_used": "0",
+                  "guid": "dfd64de2-4f2b-442d-b339-e786c854b284",
+                  "id": "86",
+                  "name": "KNH PEB - Home",
+                  "type": "url",
+                  "url": "https://sharepoint.amr.ith.intel.com/sites/KNH_PEB/SitePages/Home.aspx"
+               }, {
+                  "date_added": "13285127110515883",
+                  "date_last_used": "0",
+                  "guid": "b10feaf0-9879-4964-8266-d1998d751c7b",
+                  "id": "87",
+                  "name": "Knights Peak Board Design - Home",
+                  "type": "url",
+                  "url": "https://sharepoint.amr.ith.intel.com/sites/knp_boards/SitePages/Home.aspx"
+               }, {
+                  "date_added": "13285127110516902",
+                  "date_last_used": "0",
+                  "guid": "22e17aa5-de79-4381-aaf1-9f01466b44bc",
+                  "id": "88",
+                  "name": "Monthly Status",
+                  "type": "url",
+                  "url": "https://sharepoint.amr.ith.intel.com/sites/PAWG/SWPA%20Sync/Team%20Documents/Forms/AllItems.aspx?RootFolder=%2Fsites%2FPAWG%2FSWPA%20Sync%2FTeam%20Documents%2FMonthly%20Status&FolderCTID=0x012000F78A76DFC3546C468E996837A5170191&View={5B504679-5AAD-4CF4-BB8D-29BE55BED506}"
+               }, {
+                  "date_added": "13285127110527888",
+                  "date_last_used": "0",
+                  "guid": "6888a418-6543-4f77-aa5f-82e9ac1df372",
+                  "id": "89",
+                  "name": "Platform Architecture WG Sharepoint - Home",
+                  "type": "url",
+                  "url": "https://sharepoint.amr.ith.intel.com/sites/PAWG/SitePages/Home.aspx"
+               }, {
+                  "date_added": "13285127110546190",
+                  "date_last_used": "0",
+                  "guid": "bc942137-7291-458c-ad1e-a151b5bdf558",
+                  "id": "90",
+                  "name": "Power Pathfinding - Home",
+                  "type": "url",
+                  "url": "https://sharepoint.amr.ith.intel.com/sites/KNPPath/Power/SitePages/Home.aspx"
+               }, {
+                  "date_added": "13285127110547210",
+                  "date_last_used": "0",
+                  "guid": "0a20384c-6a67-4d14-9643-3674b1a1a411",
+                  "id": "91",
+                  "name": "Ridgeport HSD",
+                  "type": "url",
+                  "url": "https://vthsd.intel.com/hsd/ridgeport/#search/criteria.aspx?focus=requirement&send=0"
+               }, {
+                  "date_added": "13285127110547210",
+                  "date_last_used": "0",
+                  "guid": "5d32b81d-ec63-4b51-82ff-c4e78aad215e",
+                  "id": "92",
+                  "name": "Storm Lake Fabric - Home",
+                  "type": "url",
+                  "url": "https://sharepoint.amr.ith.intel.com/sites/StormLakeFabric/SitePages/Home.aspx"
+               }, {
+                  "date_added": "13285127110513367",
+                  "date_last_used": "0",
+                  "guid": "be8f8442-2d7d-43db-934a-a6a503c28ee4",
+                  "id": "93",
+                  "name": "grupa IPA - 5010  Inside Blue",
+                  "type": "url",
+                  "url": "https://soco.intel.com/groups/ipa-5010?et=invite.join.sgroup.unmodifiable"
+               }, {
+                  "date_added": "13285127110514368",
+                  "date_last_used": "0",
+                  "guid": "dbcfb9ed-b06a-4566-af7d-cd57a6784f32",
+                  "id": "94",
+                  "name": "grupa IPA 5026  Inside Blue",
+                  "type": "url",
+                  "url": "https://soco.intel.com/groups/ipa-5026?et=invite.join.sgroup.unmodifiable"
+               } ],
+               "date_added": "13404594658047415",
+               "date_last_used": "0",
+               "date_modified": "0",
+               "guid": "ab22016c-d0a9-4b15-9090-e5d0ccaadc26",
+               "id": "79",
+               "name": "IPAG",
+               "type": "folder"
+            }, {
+               "date_added": "13285127110605492",
+               "date_last_used": "0",
+               "guid": "3e2c4a24-b036-459f-96e3-0c0b5e2ceeb3",
+               "id": "95",
+               "name": "LAD (ISDC Israel)",
+               "type": "url",
+               "url": "http://moss.ger.ith.intel.com/sites/LAD_SW/Pages/Default.aspx"
+            }, {
+               "date_added": "13285127110606492",
+               "date_last_used": "0",
+               "guid": "fc8e2aeb-f817-47de-a0d6-98f50509512f",
+               "id": "96",
+               "name": "Manageability DPA site",
+               "type": "url",
+               "url": "http://moss.amr.ith.intel.com/sites/dpa/PSA/manageability/default.aspx"
+            }, {
+               "children": [ {
+                  "date_added": "13285127110607553",
+                  "date_last_used": "0",
+                  "guid": "09756ba5-fca4-4f86-bda8-eff64717d466",
+                  "id": "98",
+                  "name": "Backup Child Care Reimbursement Program",
+                  "type": "url",
+                  "url": "https://employeecontent.intel.com/contentdelivery/getcontent.aspx?webpath=cn_active/support/hrcontent/backup_child_care_reimbursement.htm"
+               }, {
+                  "date_added": "13285127110607553",
+                  "date_last_used": "0",
+                  "guid": "52d11551-295e-4e1b-8779-8bee44ce15e1",
+                  "id": "99",
+                  "name": "Home - ME-CSME Firmware Staff",
+                  "type": "url",
+                  "url": "https://sharepoint.amr.ith.intel.com/sites/DSD-SSE/ME_CSME%20Firmware%20Staff/default.aspx"
+               }, {
+                  "date_added": "13285127110608491",
+                  "date_last_used": "0",
+                  "guid": "0d7b253a-22af-4a04-8301-c2ec8ed52bfd",
+                  "id": "100",
+                  "name": "Oregon GPTW Events Home",
+                  "type": "url",
+                  "url": "http://oregongptw.intel.com/myevents/default.aspx"
+               }, {
+                  "date_added": "13285127110609491",
+                  "date_last_used": "0",
+                  "guid": "85f2b061-d552-4394-a537-d8cc69406565",
+                  "id": "101",
+                  "name": "Oregon GPTW on moss",
+                  "type": "url",
+                  "url": "http://moss.amr.ith.intel.com/sites/gptw/oregon/Pages/default.aspx"
+               } ],
+               "date_added": "13404594658048005",
+               "date_last_used": "0",
+               "date_modified": "0",
+               "guid": "268edc13-32f1-4d34-99c6-4fe1d897428e",
+               "id": "97",
+               "name": "OR",
+               "type": "folder"
+            }, {
+               "children": [ {
+                  "children": [ {
+                     "date_added": "13285127110579991",
+                     "date_last_used": "0",
+                     "guid": "45c86895-c568-4a97-ae1e-39d6ca5b9b3c",
+                     "id": "104",
+                     "name": "BIOS Writers Guide",
+                     "type": "url",
+                     "url": "http://moss.amr.ith.intel.com/sites/APD_BIOS/Projects/Forms/AllItems.aspx?RootFolder=%2fsites%2fAPD%5fBIOS%2fProjects%2fGrantley%2fBIOS%20Customer%20Enabling%2fHSX%20Combined%20BWG&FolderCTID=&View=%7b0F64F1A9%2d4898%2d4F2B%2d806D%2d328BADCBC81A%7d"
+                  }, {
+                     "date_added": "13285127110580991",
+                     "date_last_used": "0",
+                     "guid": "f94cbe8e-a17a-46c9-861b-91cc500cef78",
+                     "id": "105",
+                     "name": "Home - Grantley Common Core Arch WG",
+                     "type": "url",
+                     "url": "http://moss.amr.ith.intel.com/sites/EPTD/Grantley/CommonCoreArchWG/default.aspx"
+                  }, {
+                     "date_added": "13285127110580991",
+                     "date_last_used": "0",
+                     "guid": "6803d66c-0f96-4b66-b60d-92c02eb69f8b",
+                     "id": "106",
+                     "name": "Hotham AWG",
+                     "type": "url",
+                     "url": "http://moss.amr.ith.intel.com/sites/PVE1/Hotham/AWG/default.aspx"
+                  }, {
+                     "date_added": "13285127110582991",
+                     "date_last_used": "0",
+                     "guid": "3664fb72-9788-4257-bd7d-43e0b5e3f803",
+                     "id": "107",
+                     "name": "MapDay_ww26",
+                     "type": "url",
+                     "url": "http://moss.amr.ith.intel.com/sites/CCGSSE/molettbend/MapDay_ww26/Forms/AllItems.aspx"
+                  }, {
+                     "date_added": "13285127110583991",
+                     "date_last_used": "0",
+                     "guid": "b19b8135-0f54-4894-864b-408d93fe0ef1",
+                     "id": "108",
+                     "name": "Molette Bend - Engineering - Home",
+                     "type": "url",
+                     "url": "https://sharepoint.ger.ith.intel.com/sites/mb/SitePages/Home.aspx"
+                  }, {
+                     "date_added": "13285127110583991",
+                     "date_last_used": "0",
+                     "guid": "82930b69-835b-4fb8-85c3-f4719909cafa",
+                     "id": "109",
+                     "name": "Molette Bend - RTC",
+                     "type": "url",
+                     "url": "https://rtc.intel.com/ccm0006001/web/projects/Molette%20Bend#action=com.ibm.team.dashboard.viewDashboard"
+                  }, {
+                     "date_added": "13285127110584991",
+                     "date_last_used": "0",
+                     "guid": "172c8cfb-2368-4c8d-bf4b-d4cb7cb54ec2",
+                     "id": "110",
+                     "name": "Molette Bend Document Library",
+                     "type": "url",
+                     "url": "http://moss.amr.ith.intel.com/sites/dpa/MFW/Document%20Library/Forms/Sort%20by%20Date.aspx"
+                  }, {
+                     "date_added": "13285127110585990",
+                     "date_last_used": "0",
+                     "guid": "facdede4-4da6-4846-892a-a0d68b63aeed",
+                     "id": "111",
+                     "name": "MoletteBend - Engineering - AMR",
+                     "type": "url",
+                     "url": "https://sharepoint.amr.ith.intel.com/sites/MoletteBend/SitePages/Home.aspx"
+                  }, {
+                     "date_added": "13285127110586994",
+                     "date_last_used": "0",
+                     "guid": "3e216af9-e5f5-4e9e-a3a0-df2227ee7d49",
+                     "id": "112",
+                     "name": "MoletteBend Sprint",
+                     "type": "url",
+                     "url": "http://moss.amr.ith.intel.com/sites/CCGSSE/MoletteBendSprint/default.aspx"
+                  }, {
+                     "date_added": "13285127110587995",
+                     "date_last_used": "0",
+                     "guid": "3403e98f-618f-42e2-9437-392ed58306b1",
+                     "id": "113",
+                     "name": "My SDL Projects",
+                     "type": "url",
+                     "url": "https://sp2010.amr.ith.intel.com/Sites/sdl/MySDL/AllProjects/default.aspx?ShowMine=True"
+                  }, {
+                     "date_added": "13285127110589077",
+                     "date_last_used": "0",
+                     "guid": "77bbb212-9748-4f89-ab9c-93a227e92366",
+                     "id": "114",
+                     "name": "PFAS & other managability docs",
+                     "type": "url",
+                     "url": "http://moss.amr.ith.intel.com/sites/DPA/PSA/manageability/default.aspx?RootFolder=%2fsites%2fdpa%2fPSA%2fmanageability%2fShared%20Documents%2f2013%20Generation%20%28Grantley%29%2fME%20Firmware%20%2d%20Molette%20Bend&FolderCTID=&View=%7bCFA956F3%2d61E1%2d4E26%2d8ADC%2dE48BC32DBE84%7d"
+                  }, {
+                     "date_added": "13285127110602492",
+                     "date_last_used": "0",
+                     "guid": "9611d71d-cd8b-4638-81d2-54b375714c76",
+                     "id": "115",
+                     "name": "SSE Wiki - Home",
+                     "type": "url",
+                     "url": "http://moss.amr.ith.intel.com/sites/CCGSSE/OregonFW/SSEWiki/Wiki%20Pages/Home.aspx"
+                  }, {
+                     "date_added": "13285127110601492",
+                     "date_last_used": "0",
+                     "guid": "3b07f8ca-a5ef-409b-bdfa-f6d8fbfdffa5",
+                     "id": "116",
+                     "name": "Server Software Engineering Staff Mtg - CH Ben Vrvilo",
+                     "type": "url",
+                     "url": "http://moss.amr.ith.intel.com/sites/CCGSSE/Server%20Software%20Engineering%20Mtg%20-%20CH_%20Ben%20Vrvilo(1)/default.aspx?InstanceID=120"
+                  }, {
+                     "date_added": "13285127110603492",
+                     "date_last_used": "0",
+                     "guid": "6bed6f82-3db9-44b9-ac04-a2bdc6b33822",
+                     "id": "117",
+                     "name": "Technology Opportunity Review (TOR)",
+                     "type": "url",
+                     "url": "http://moss.amr.ith.intel.com/sites/pcg3/arch/Technology%20Opportunity%20Review%20(TOR)/Default.aspx?action=ADD&agendaID=2006100410365532&instanceID=52#ConfigurationBookmark"
+                  } ],
+                  "date_added": "13404594658048160",
+                  "date_last_used": "0",
+                  "date_modified": "0",
+                  "guid": "290c1dde-097a-463f-ade4-6211f8fda41b",
+                  "id": "103",
+                  "name": "Molette Bend FW",
+                  "type": "folder"
+               }, {
+                  "date_added": "13285127110576029",
+                  "date_last_used": "0",
+                  "guid": "d1b5ae3a-4e7d-461e-a261-a25ef9e1d2b5",
+                  "id": "118",
+                  "name": "Node Manager on Stoutland",
+                  "type": "url",
+                  "url": "http://moss.ger.ith.intel.com/sites/stoutland/default.aspx?PageView=Shared"
+               }, {
+                  "date_added": "13285127110576993",
+                  "date_last_used": "0",
+                  "guid": "a3a68739-e064-4c5a-9906-15983145c37e",
+                  "id": "119",
+                  "name": "SPS Engineering Local PDT",
+                  "type": "url",
+                  "url": "http://sp/sites/rd/iAMT/MEP/SPS%20Engineering%20Local%20PDT/default.aspx"
+               }, {
+                  "date_added": "13285127110577990",
+                  "date_last_used": "0",
+                  "guid": "a7c0a0ec-58ee-4159-8e55-e4cdf7c9ba15",
+                  "id": "120",
+                  "name": "VE Firmware Development",
+                  "type": "url",
+                  "url": "http://carmel.fm.intel.com/sites/CPD-SWE/SSE/IOE%20FW%20SW/VE%20Firmware%20Development%20Library/Forms/AllItems.aspx"
+               }, {
+                  "date_added": "13285127110577990",
+                  "date_last_used": "0",
+                  "guid": "f2ff51c8-bf1c-439a-a1e7-dcef3331bf3a",
+                  "id": "121",
+                  "name": "Willowbrook Document Workspace",
+                  "type": "url",
+                  "url": "http://moss.amr.ith.intel.com/sites/CCGSSE/willowbkdocws/default.aspx"
+               } ],
+               "date_added": "13404594658048152",
+               "date_last_used": "0",
+               "date_modified": "0",
+               "guid": "6db064eb-f693-490c-83f5-73ed9fb6d0e8",
+               "id": "102",
+               "name": "Obsolete",
+               "type": "folder"
+            }, {
+               "date_added": "13285127110610492",
+               "date_last_used": "0",
+               "guid": "77f4d9cc-e6c4-46eb-851d-5bd9dfdfbfac",
+               "id": "122",
+               "name": "PM Dashboard",
+               "type": "url",
+               "url": "https://sharepoint.amr.ith.intel.com/sites/DSD-SSE/pmdash/default.aspx"
+            }, {
+               "children": [ {
+                  "date_added": "13285127110612492",
+                  "date_last_used": "0",
+                  "guid": "57120e73-4e85-4dbb-9b69-5b6d56d1bfa1",
+                  "id": "124",
+                  "name": "10nm HAS Docs",
+                  "type": "url",
+                  "url": "https://sharepoint.amr.ith.intel.com/sites/10nmCon/HAS/default.aspx"
+               }, {
+                  "children": [ {
+                     "date_added": "13285127110617493",
+                     "date_last_used": "0",
+                     "guid": "dbc74e26-80a1-4aae-a9aa-7e714117ba5a",
+                     "id": "126",
+                     "name": " Romley Product Arch. Meeting Workspace",
+                     "type": "url",
+                     "url": "http://moss.amr.ith.intel.com/sites/EPTD/ArchWS/default.aspx"
+                  }, {
+                     "date_added": "13285127110618493",
+                     "date_last_used": "0",
+                     "guid": "74abdbc2-2a5a-4c21-bf4b-74c7e1b76d32",
+                     "id": "127",
+                     "name": " TAXCO DVP",
+                     "type": "url",
+                     "url": "http://moss.amr.ith.intel.com/sites/vhg/romleydvp/default.aspx"
+                  }, {
+                     "date_added": "13285127110621509",
+                     "date_last_used": "0",
+                     "guid": "6c26956c-e132-43c2-9190-5615456ae364",
+                     "id": "128",
+                     "name": "APD Thunder Ridge - Home",
+                     "type": "url",
+                     "url": "https://sharepoint.amr.ith.intel.com/sites/APD_Thunder_Ridge/SitePages/Home.aspx"
+                  }, {
+                     "date_added": "13285127110619493",
+                     "date_last_used": "0",
+                     "guid": "ee1b3a19-dd71-429d-b2e7-fd2c4e687863",
+                     "id": "129",
+                     "name": "Agate Beach - Home",
+                     "type": "url",
+                     "url": "https://sharepoint.amr.ith.intel.com/sites/APD_Agate_Beach/SitePages/Home.aspx"
+                  }, {
+                     "date_added": "13285127110620508",
+                     "date_last_used": "0",
+                     "guid": "2fb419e6-50f7-45e2-8fe6-829dd339d545",
+                     "id": "130",
+                     "name": "Agate Beach",
+                     "type": "url",
+                     "url": "http://moss.amr.ith.intel.com/sites/APD_Agate_Beach/default.aspx"
+                  }, {
+                     "date_added": "13285127110622499",
+                     "date_last_used": "0",
+                     "guid": "9ad60240-8956-4a26-8e1f-77b23029ec76",
+                     "id": "131",
+                     "name": "Arandas VVP (Granley 4S)",
+                     "type": "url",
+                     "url": "http://moss.amr.ith.intel.com/sites/vhg/grantley/default.aspx"
+                  }, {
+                     "date_added": "13285127110623498",
+                     "date_last_used": "0",
+                     "guid": "50590c9a-5365-47d3-a4a2-44d30aa89060",
+                     "id": "132",
+                     "name": "Aspen Cove - Home",
+                     "type": "url",
+                     "url": "https://sharepoint.amr.ith.intel.com/sites/APD_Aspen_Cove/SitePages/Home.aspx"
+                  }, {
+                     "date_added": "13285127110623498",
+                     "date_last_used": "0",
+                     "guid": "9227b3ff-28ba-4f87-8a82-563930fd21c5",
+                     "id": "133",
+                     "name": "Aztec City - Home",
+                     "type": "url",
+                     "url": "https://sharepoint.amr.ith.intel.com/sites/APD_Aztec_City/SitePages/Home.aspx"
+                  }, {
+                     "date_added": "13285127110624498",
+                     "date_last_used": "0",
+                     "guid": "7ec209fa-4582-4658-adde-5393f961da22",
+                     "id": "134",
+                     "name": "Harbor City Board Sharepoint",
+                     "type": "url",
+                     "url": "http://moss.amr.ith.intel.com/sites/APD_SIO_TV/SIO%20TV%20Docs/Forms/AllItems.aspx"
+                  }, {
+                     "date_added": "13285127110625497",
+                     "date_last_used": "0",
+                     "guid": "32d954b6-b56a-44fe-a82b-282df8821c09",
+                     "id": "135",
+                     "name": "Hermosa Beach (Bromolow)",
+                     "type": "url",
+                     "url": "http://moss.amr.ith.intel.com/sites/APD_Hermosa_Beach/default.aspx"
+                  }, {
+                     "date_added": "13285127110626495",
+                     "date_last_used": "0",
+                     "guid": "976e161b-937f-4df8-9d93-add5958a2dc1",
+                     "id": "136",
+                     "name": "Home - APD Mayan City (Grantley)",
+                     "type": "url",
+                     "url": "http://moss.amr.ith.intel.com/sites/APD_Mayan_City/default.aspx"
+                  }, {
+                     "date_added": "13285127110626495",
+                     "date_last_used": "0",
+                     "guid": "b6f2c996-ed63-4b36-acbe-aefb0d8c2707",
+                     "id": "137",
+                     "name": "Home - kahuna",
+                     "type": "url",
+                     "url": "http://moss.amr.ith.intel.com/sites/vho/kahuna/default.aspx"
+                  }, {
+                     "date_added": "13285127110628495",
+                     "date_last_used": "0",
+                     "guid": "9d8900f9-a1d1-46ac-b34b-7db4c085ee02",
+                     "id": "138",
+                     "name": "Mayan City (Grantley) SRP",
+                     "type": "url",
+                     "url": "http://moss.amr.ith.intel.com/sites/APD_Mayan_City/default.aspx"
+                  }, {
+                     "date_added": "13285127110627495",
+                     "date_last_used": "0",
+                     "guid": "62604be7-918e-4a45-8106-0a07ee656aec",
+                     "id": "139",
+                     "name": "Mayan City - Home",
+                     "type": "url",
+                     "url": "https://sharepoint.amr.ith.intel.com/sites/APD_Mayan_City/SitePages/Home.aspx"
+                  }, {
+                     "date_added": "13285127110629495",
+                     "date_last_used": "0",
+                     "guid": "4ce6510b-0d36-46a2-b14e-d359edae96a6",
+                     "id": "140",
+                     "name": "Romley Product Arch. Meeting Workspace",
+                     "type": "url",
+                     "url": "http://moss.amr.ith.intel.com/sites/EPTD/ArchWS/default.aspx"
+                  }, {
+                     "date_added": "13285127110630501",
+                     "date_last_used": "0",
+                     "guid": "a2e0a1b9-f307-4344-8c35-4ad3d917a2df",
+                     "id": "141",
+                     "name": "Romley-EP SRP#1",
+                     "type": "url",
+                     "url": "http://moss.amr.ith.intel.com/sites/APD_Romley/Docs/RomleyEP%20Docs/Forms/AllItems.aspx"
+                  }, {
+                     "date_added": "13285127110631528",
+                     "date_last_used": "0",
+                     "guid": "a3d1aa99-b286-418d-9f69-da26b34f4f77",
+                     "id": "142",
+                     "name": "Shared Documents - CUSTOMER_SUPPORT_PAGE-_CUSTOMERS_LOOK_HERE",
+                     "type": "url",
+                     "url": "https://sharepoint.amr.ith.intel.com/sites/vhsc/bricklanddvp/Shared%20documents/Customer%20Support/CUSTOMER_SUPPORT_PAGE-_CUSTOMERS_LOOK_HERE.htm"
+                  }, {
+                     "date_added": "13285127110632496",
+                     "date_last_used": "0",
+                     "guid": "e2c59493-4b47-4a67-a713-822b25a1e859",
+                     "id": "143",
+                     "name": "TAXCO DVP",
+                     "type": "url",
+                     "url": "http://moss.amr.ith.intel.com/sites/vhg/romleydvp/default.aspx"
+                  }, {
+                     "date_added": "13285127110632496",
+                     "date_last_used": "0",
+                     "guid": "e0a1736f-45f9-4034-ba79-efbc8c0d1a99",
+                     "id": "144",
+                     "name": "Thunder Ridge - Brickland SRP",
+                     "type": "url",
+                     "url": "http://moss.amr.ith.intel.com/sites/APD_Thunder_Ridge/default.aspx"
+                  }, {
+                     "date_added": "13285127110633495",
+                     "date_last_used": "0",
+                     "guid": "77024087-3d02-4124-b940-cba2cc0c779a",
+                     "id": "145",
+                     "name": "Wisteria Island - Brickland DVP",
+                     "type": "url",
+                     "url": "http://moss.amr.ith.intel.com/sites/vhsc/bricklanddvp/default.aspx"
+                  }, {
+                     "date_added": "13285127110634496",
+                     "date_last_used": "0",
+                     "guid": "4039e73f-1619-42b7-8de0-5117dc835f37",
+                     "id": "146",
+                     "name": "Yakima City - Home",
+                     "type": "url",
+                     "url": "https://sharepoint.amr.ith.intel.com/sites/APD_Yakima_City/SitePages/Home.aspx"
+                  } ],
+                  "date_added": "13404594658048896",
+                  "date_last_used": "0",
+                  "date_modified": "0",
+                  "guid": "6e17b71b-0ce9-4743-8152-72edb6d442e0",
+                  "id": "125",
+                  "name": "Boards",
+                  "type": "folder"
+               }, {
+                  "date_added": "13285127110613491",
+                  "date_last_used": "0",
+                  "guid": "d504e2d6-eb9b-4bac-9c14-8efe86366232",
+                  "id": "147",
+                  "name": "Brickland - EPTD",
+                  "type": "url",
+                  "url": "http://moss.amr.ith.intel.com/sites/EPTD/Brickland/default.aspx"
+               }, {
+                  "date_added": "13285127110614492",
+                  "date_last_used": "0",
+                  "guid": "bceecc56-2187-48c2-be0c-c8952d33cb00",
+                  "id": "148",
+                  "name": "Brickland Sharepoint 2010 - Home",
+                  "type": "url",
+                  "url": "https://sharepoint.amr.ith.intel.com/sites/BricklandSharepoint2010/SitePages/Home.aspx"
+               }, {
+                  "children": [ {
+                     "date_added": "13285127110638601",
+                     "date_last_used": "0",
+                     "guid": "367f3b66-9823-48ac-b07b-37494465b410",
+                     "id": "150",
+                     "name": "CPU-registers",
+                     "type": "url",
+                     "url": "https://fcaahsxgk.fc.intel.com:8081/registers/"
+                  }, {
+                     "date_added": "13285127110637502",
+                     "date_last_used": "0",
+                     "guid": "c3bdaf56-743c-4bf6-bf86-abb335e1afde",
+                     "id": "151",
+                     "name": "ConfigDB - CPU Register Groups",
+                     "type": "url",
+                     "url": "https://sasv.intel.com/cdb/"
+                  }, {
+                     "date_added": "13285127110639495",
+                     "date_last_used": "0",
+                     "guid": "0dd4c196-6fd0-4ccb-af9b-7218426df33e",
+                     "id": "152",
+                     "name": "HSD Haswell Server Document Explorer",
+                     "type": "url",
+                     "url": "https://vthsd.fc.intel.com/hsd/haswell_server/default.aspx#document/doctree.aspx"
+                  }, {
+                     "date_added": "13285127110640494",
+                     "date_last_used": "0",
+                     "guid": "ca129665-ff46-493c-8308-d2748da2f877",
+                     "id": "153",
+                     "name": "HSD Haswell Server Home",
+                     "type": "url",
+                     "url": "https://vthsd.fc.intel.com/hsd/haswell_server/#include/home.aspx"
+                  }, {
+                     "date_added": "13285127110641495",
+                     "date_last_used": "0",
+                     "guid": "128034a4-fc9d-4084-b1c6-f554cee89a69",
+                     "id": "154",
+                     "name": "HSD Skylake Server Home",
+                     "type": "url",
+                     "url": "https://vthsd.sc.intel.com/hsd/skylake_server/#include/home.aspx"
+                  }, {
+                     "date_added": "13285127110642574",
+                     "date_last_used": "0",
+                     "guid": "173ac3d8-bcc3-4760-9d31-e984b07a91ce",
+                     "id": "155",
+                     "name": "IVB  TWiki",
+                     "type": "url",
+                     "url": "http://pfv-wiki.iil.intel.com/bin/view/IVB/WebHome"
+                  }, {
+                     "date_added": "13285127110644494",
+                     "date_last_used": "0",
+                     "guid": "6ed5130e-969e-4c18-b1f7-1e829af83f78",
+                     "id": "156",
+                     "name": "JKT - Project Management",
+                     "type": "url",
+                     "url": "http://moss.amr.ith.intel.com/sites/jaketown/pm/default.aspx"
+                  }, {
+                     "date_added": "13285127110642574",
+                     "date_last_used": "0",
+                     "guid": "340f0e54-77d9-4440-920e-e71cbe796f21",
+                     "id": "157",
+                     "name": "Jaketown - Register Groups",
+                     "type": "url",
+                     "url": "https://mobilesv.fm.intel.com/configdb/index.php?project=Jaketown"
+                  }, {
+                     "date_added": "13285127110643495",
+                     "date_last_used": "0",
+                     "guid": "c5a04573-99d0-41d6-b166-9790bcde7cf2",
+                     "id": "158",
+                     "name": "Jaketown Architecture",
+                     "type": "url",
+                     "url": "http://moss.amr.ith.intel.com/sites/JaketownArch/default.aspx"
+                  }, {
+                     "date_added": "13285127110644494",
+                     "date_last_used": "0",
+                     "guid": "90117255-f98c-49ed-966a-94316e5fbffb",
+                     "id": "159",
+                     "name": "Jaketown Fuses",
+                     "type": "url",
+                     "url": "http://moss.amr.ith.intel.com/sites/SDM_XPI/SDM-PM/Projects/Jaketown/default.aspx"
+                  } ],
+                  "date_added": "13404594658049441",
+                  "date_last_used": "0",
+                  "date_modified": "0",
+                  "guid": "77742860-0404-4d30-89ea-e2735180745b",
+                  "id": "149",
+                  "name": "CPU",
+                  "type": "folder"
+               }, {
+                  "date_added": "13285127110615491",
+                  "date_last_used": "0",
+                  "guid": "cea65c4d-80b1-403c-bc0f-d54ae9fbfb3a",
+                  "id": "160",
+                  "name": "Castle Crest Planning",
+                  "type": "url",
+                  "url": "https://sharepoint.amr.ith.intel.com/sites/DSD-SSE/pmdash/Castle_Crest/SitePages/Home.aspx"
+               }, {
+                  "date_added": "13285127110616495",
+                  "date_last_used": "0",
+                  "guid": "3b80233d-83e4-49ef-962a-4bb6178e56f6",
+                  "id": "161",
+                  "name": "Chassis WG - Home",
+                  "type": "url",
+                  "url": "https://sharepoint.amr.ith.intel.com/sites/MDGArchMain/Converged/chassisWG/SitePages/Home.aspx"
+               }, {
+                  "date_added": "13285127110635495",
+                  "date_last_used": "0",
+                  "guid": "c8a9ad1e-4c04-4563-b8ec-eabded6ab57a",
+                  "id": "162",
+                  "name": "Common Core Arch WG",
+                  "type": "url",
+                  "url": "https://sharepoint.amr.ith.intel.com/sites/PEG_Purley/CommonCore_Arch_WG/Shared%20Documents/Forms/AllItems.aspx"
+               }, {
+                  "date_added": "13285127110636498",
+                  "date_last_used": "0",
+                  "guid": "e4ee7410-3db1-4a72-9ea9-ad6095dcf9bf",
+                  "id": "163",
+                  "name": "Denlow PEB",
+                  "type": "url",
+                  "url": "http://moss.amr.ith.intel.com/sites/EPTD/PEB/Denlow/default.aspx"
+               }, {
+                  "date_added": "13285127110646493",
+                  "date_last_used": "0",
+                  "guid": "8cbd9fec-7613-437e-8860-63f382214380",
+                  "id": "164",
+                  "name": "Grantley DPA Site",
+                  "type": "url",
+                  "url": "http://moss.amr.ith.intel.com/sites/dpa/Grantley/default.aspx"
+               }, {
+                  "date_added": "13285127110647496",
+                  "date_last_used": "0",
+                  "guid": "3f1e9103-c73c-4b51-b90c-ebdbc81c59ce",
+                  "id": "165",
+                  "name": "Grantley PXT",
+                  "type": "url",
+                  "url": "http://moss.amr.ith.intel.com/sites/SPM/Grantley/default.aspx"
+               }, {
+                  "date_added": "13285127110658491",
+                  "date_last_used": "0",
+                  "guid": "1aa0fdae-85c0-4409-9544-53a5e4adb7eb",
+                  "id": "166",
+                  "name": "Home - EPTD Brickland",
+                  "type": "url",
+                  "url": "http://moss.amr.ith.intel.com/sites/EPTD/Brickland/default.aspx"
+               }, {
+                  "date_added": "13285127110659491",
+                  "date_last_used": "0",
+                  "guid": "95e64c7a-e19b-40e8-9113-84c88c3bbf55",
+                  "id": "167",
+                  "name": "Home - Grantley Common Core Arch WG",
+                  "type": "url",
+                  "url": "https://sharepoint.amr.ith.intel.com/sites/PEG_Grantley/Grantley-Comm-Core-Arch/default.aspx"
+               }, {
+                  "date_added": "13285127110660492",
+                  "date_last_used": "0",
+                  "guid": "eb7e9f81-2158-47bd-9dd0-15c14d4527a8",
+                  "id": "168",
+                  "name": "Home - Grantley PXT",
+                  "type": "url",
+                  "url": "https://sharepoint.amr.ith.intel.com/sites/DCSGDXT/Grantley/GrantleyPXT/default.aspx?InstanceID=7"
+               }, {
+                  "date_added": "13285127110661491",
+                  "date_last_used": "0",
+                  "guid": "c980beb4-8e3a-47a7-bfbf-127bbbcdd1cc",
+                  "id": "169",
+                  "name": "Meridian",
+                  "type": "url",
+                  "url": "http://moss.amr.ith.intel.com/sites/vho/meridian/default.aspx"
+               }, {
+                  "date_added": "13285127110662504",
+                  "date_last_used": "0",
+                  "guid": "e8812d70-3cd1-4dbb-8f6b-7fc03b56bc71",
+                  "id": "170",
+                  "name": "Molette Bend ME FW",
+                  "type": "url",
+                  "url": "http://moss.amr.ith.intel.com/sites/CCGSSE/molettbend/default.aspx"
+               }, {
+                  "children": [ {
+                     "date_added": "13285127110649492",
+                     "date_last_used": "0",
+                     "guid": "13e701eb-5513-4469-a35b-56a3f7409edb",
+                     "id": "172",
+                     "name": "CPT C-spec",
+                     "type": "url",
+                     "url": "http://ipdc3.png.intel.com/sbin/nph-login/cgi-bin/perforce/cpt/Cspec/perforce.cgi"
+                  }, {
+                     "date_added": "13285127110651493",
+                     "date_last_used": "0",
+                     "guid": "6fe06b10-8f74-4511-ac89-02f228e02c14",
+                     "id": "173",
+                     "name": "CPT",
+                     "type": "url",
+                     "url": "http://moss.ger.ith.intel.com/sites/ITP/CPT2/CPT2/default.aspx"
+                  }, {
+                     "date_added": "13285127110647496",
+                     "date_last_used": "0",
+                     "guid": "1e074fc1-583c-49ad-b038-52248be26273",
+                     "id": "174",
+                     "name": "Cougar Point Execution",
+                     "type": "url",
+                     "url": "http://moss.ger.ith.intel.com/sites/ITP/CPT_Exec/Cougar%20Point%20Execution/default.aspx"
+                  }, {
+                     "date_added": "13285127110648495",
+                     "date_last_used": "0",
+                     "guid": "a729c08a-753e-46ca-a5df-4a98970daca5",
+                     "id": "175",
+                     "name": "Cougarpoint PDT",
+                     "type": "url",
+                     "url": "http://moss.amr.ith.intel.com/sites/cougarpoint/PDT/default.aspx"
+                  }, {
+                     "date_added": "13285127110652533",
+                     "date_last_used": "0",
+                     "guid": "1702676f-076c-4b06-95be-2a257f1edd6f",
+                     "id": "176",
+                     "name": "IBX Cspec",
+                     "type": "url",
+                     "url": "http://ipdc.png.intel.com/cgi-bin/perforce/ibx/Cspec/perforce.cgi"
+                  }, {
+                     "date_added": "13285127110653492",
+                     "date_last_used": "0",
+                     "guid": "b0da5bf0-32ea-4a81-9031-c64298f573b4",
+                     "id": "177",
+                     "name": "LPT Changes",
+                     "type": "url",
+                     "url": "http://moss.amr.ith.intel.com/sites/Architecture/ArchSummit/default.aspx"
+                  }, {
+                     "date_added": "13285127110654493",
+                     "date_last_used": "0",
+                     "guid": "6630b37b-c1dc-414a-90c2-2aaa2aeaed78",
+                     "id": "178",
+                     "name": "LPT Cspec",
+                     "type": "url",
+                     "url": "http://ipdc3.png.intel.com/cgi-bin/perforce/lpt/Cspec/perforce.cgi"
+                  }, {
+                     "date_added": "13285127110656495",
+                     "date_last_used": "0",
+                     "guid": "8cd063b3-4ae4-475e-8c22-450689325706",
+                     "id": "179",
+                     "name": "PMC Firmware",
+                     "type": "url",
+                     "url": "http://moss.amr.ith.intel.com/sites/PMCFirmware/default.aspx"
+                  }, {
+                     "date_added": "13285127110654493",
+                     "date_last_used": "0",
+                     "guid": "505aa4f5-2132-4eaf-a6d5-0866b959b579",
+                     "id": "180",
+                     "name": "Patsburg Architecture Documents",
+                     "type": "url",
+                     "url": "http://ppa-eca.intel.com/Secure_PBG/projectpage/arch_patsburg_documents.htm"
+                  }, {
+                     "date_added": "13285127110655492",
+                     "date_last_used": "0",
+                     "guid": "c27bc4bc-7bf2-4926-b015-a7a5b8388ec9",
+                     "id": "181",
+                     "name": "Patsburg SSB",
+                     "type": "url",
+                     "url": "http://moss.amr.ith.intel.com/sites/pcg2/OCE/SSB/default.aspx"
+                  }, {
+                     "date_added": "13285127110657492",
+                     "date_last_used": "0",
+                     "guid": "dee51db2-47ea-442c-bbf5-47d183f6fa3f",
+                     "id": "182",
+                     "name": "Wellsburg C-Spec",
+                     "type": "url",
+                     "url": "https://sharepoint.amr.ith.intel.com/sites/WBGARCH/SitePages/Wellsburg%20Architecture.aspx"
+                  }, {
+                     "date_added": "13285127110657492",
+                     "date_last_used": "0",
+                     "guid": "cfa13d4d-2c84-4856-8b5b-d241abd400eb",
+                     "id": "183",
+                     "name": "Wellsburg CCB and other docs",
+                     "type": "url",
+                     "url": "http://moss.amr.ith.intel.com/sites/Wellsburg/Pages/Default.aspx"
+                  }, {
+                     "date_added": "13285127110658491",
+                     "date_last_used": "0",
+                     "guid": "ac4bbad8-f84a-49e3-8406-b2fabbe80515",
+                     "id": "184",
+                     "name": "Wellsburg",
+                     "type": "url",
+                     "url": "http://moss.amr.ith.intel.com/sites/Wellsburg/Pages/Default.aspx"
+                  } ],
+                  "date_added": "13404594658050045",
+                  "date_last_used": "0",
+                  "date_modified": "0",
+                  "guid": "ef621fa2-6c25-4449-a02a-32e210f23c0f",
+                  "id": "171",
+                  "name": "PCH",
+                  "type": "folder"
+               }, {
+                  "date_added": "13285127110662504",
+                  "date_last_used": "0",
+                  "guid": "b5458c2f-d24a-4d41-9add-fca35a114979",
+                  "id": "185",
+                  "name": "PECI3.0",
+                  "type": "url",
+                  "url": "http://mpgsites.intel.com/sites/iMpg-Arch/PECI%203.0%20WG/Shared%20Documents/Forms/AllItems.aspx"
+               }, {
+                  "date_added": "13285127110663491",
+                  "date_last_used": "0",
+                  "guid": "c26e7d12-0da1-482a-b6e6-1eea0c9c3393",
+                  "id": "186",
+                  "name": "Power-Reduction Team",
+                  "type": "url",
+                  "url": "http://moss.amr.ith.intel.com/sites/pcg2/Power-reduction/default.aspx"
+               }, {
+                  "date_added": "13285127110664491",
+                  "date_last_used": "0",
+                  "guid": "c2eae50f-4333-4d2c-a380-bd993419127c",
+                  "id": "187",
+                  "name": "Roadmaps, incl. OSes",
+                  "type": "url",
+                  "url": "http://moss.amr.ith.intel.com/sites/CCGSSE/SSEOps/SSE%20Programs/Forms/AllItems.aspx"
+               }, {
+                  "date_added": "13285127110665492",
+                  "date_last_used": "0",
+                  "guid": "82d2e881-52b3-423d-bc0f-c2ccfbe13eb3",
+                  "id": "188",
+                  "name": "Romley PEB",
+                  "type": "url",
+                  "url": "http://moss.amr.ith.intel.com/sites/ServerPEBs/RomleyPEB/default.aspx?InstanceID=1"
+               } ],
+               "date_added": "13404594658048860",
+               "date_last_used": "0",
+               "date_modified": "0",
+               "guid": "cb08c64a-ef49-43c6-9f2d-89c1da32b7cf",
+               "id": "123",
+               "name": "Platforms",
+               "type": "folder"
+            }, {
+               "children": [ {
+                  "date_added": "13285127110668646",
+                  "date_last_used": "0",
+                  "guid": "060094ea-3d8f-4f2b-8d53-4d9cbca35b2c",
+                  "id": "190",
+                  "name": "CQ-JF",
+                  "type": "url",
+                  "url": "https://jf-web.clearquest.intel.com/cqweb/login?"
+               }, {
+                  "date_added": "13285127110669609",
+                  "date_last_used": "0",
+                  "guid": "30f816f5-a529-42ba-8a20-70391322302f",
+                  "id": "191",
+                  "name": "CQ-Poland",
+                  "type": "url",
+                  "url": "https://gk-web.clearquest.intel.com/cqweb/login?"
+               }, {
+                  "date_added": "13285127110669609",
+                  "date_last_used": "0",
+                  "guid": "b03dad31-b889-4578-8c79-34b59cce2efa",
+                  "id": "192",
+                  "name": "My Expenses",
+                  "type": "url",
+                  "url": "file:///C:/Users/Public/IBMERS/Expense%20Report%20Solutions/exc.html"
+               }, {
+                  "date_added": "13285127110671630",
+                  "date_last_used": "0",
+                  "guid": "0d22c762-a31c-4535-bb0e-f1ed2516b035",
+                  "id": "193",
+                  "name": "Walk For Wellness",
+                  "type": "url",
+                  "url": "http://iseteamsites.intel.com/WalkForWellness/default.aspx"
+               }, {
+                  "date_added": "13285127110670629",
+                  "date_last_used": "0",
+                  "guid": "53f1539b-14fa-4423-9cc1-e49b7f355c7e",
+                  "id": "194",
+                  "name": "storing and securing sensitive content",
+                  "type": "url",
+                  "url": "http://it.intel.com/digitaledge/2010/WW10/ElectronicStorage.htm"
+               } ],
+               "date_added": "13404594658050412",
+               "date_last_used": "0",
+               "date_modified": "0",
+               "guid": "8246afcd-4d2e-4409-a642-e4fac637d377",
+               "id": "189",
+               "name": "Processes",
+               "type": "folder"
+            }, {
+               "children": [ {
+                  "date_added": "13285127110676629",
+                  "date_last_used": "0",
+                  "guid": "a1760295-c4ff-4de4-9606-36cbb5cc9cb7",
+                  "id": "196",
+                  "name": "CYKLOTUR - Krzysztof Arentowicz ma rabat 9%",
+                  "type": "url",
+                  "url": "http://www.cyklotur.com/"
+               }, {
+                  "date_added": "13285127110675760",
+                  "date_last_used": "0",
+                  "guid": "daf9f03a-fca7-46a0-ac7d-7a708d39709f",
+                  "id": "197",
+                  "name": "biketrotter.pl",
+                  "type": "url",
+                  "url": "http://www.biketrotter.pl/?kontakt,2"
+               } ],
+               "date_added": "13404594658050514",
+               "date_last_used": "0",
+               "date_modified": "0",
+               "guid": "0c501405-fed0-4025-b30b-607b75d847be",
+               "id": "195",
+               "name": "Rowery",
+               "type": "folder"
+            }, {
+               "date_added": "13285127110611491",
+               "date_last_used": "0",
+               "guid": "49cec7b9-2715-4bd3-896a-5bea41b0d1e0",
+               "id": "198",
+               "name": "Server Manageability PPC",
+               "type": "url",
+               "url": "http://moss.amr.ith.intel.com/sites/dpa/PSA/MIAR/default.aspx"
+            }, {
+               "date_added": "13285127110666491",
+               "date_last_used": "0",
+               "guid": "ef106ea5-4e90-464a-8eea-8455e8c5d9c7",
+               "id": "199",
+               "name": "Tinsley PPOP & ICX POP - ICX POP",
+               "type": "url",
+               "url": "https://sharepoint.amr.ith.intel.com/sites/ServerCPUPlanning/ICXPOP/SitePages/ICX%20POP.aspx"
+            }, {
+               "children": [ {
+                  "date_added": "13285127110678686",
+                  "date_last_used": "0",
+                  "guid": "362bed61-ab65-461c-9779-bed3598322f9",
+                  "id": "201",
+                  "name": "CCB",
+                  "type": "url",
+                  "url": "https://gk-web.clearquest.intel.com/cqweb/login"
+               }, {
+                  "date_added": "13285127110679627",
+                  "date_last_used": "0",
+                  "guid": "20946034-43f0-4c0a-a7e9-4126d7175e96",
+                  "id": "202",
+                  "name": "IPDC",
+                  "type": "url",
+                  "url": "http://deg-carmel.intel.com/sites/PCG/MPSD/IPDC"
+               }, {
+                  "date_added": "13285127110685806",
+                  "date_last_used": "0",
+                  "guid": "f6bdeb24-2246-4249-9437-09a45f3a2171",
+                  "id": "203",
+                  "name": "Manageability FW Davida",
+                  "type": "url",
+                  "url": "http://moss.amr.ith.intel.com/sites/DPA/MFW/default.aspx"
+               }, {
+                  "date_added": "13285127110686804",
+                  "date_last_used": "0",
+                  "guid": "1f2b2baa-5ef6-41b9-856a-bc9e36d985c8",
+                  "id": "204",
+                  "name": "NPTM Documents (Murali)",
+                  "type": "url",
+                  "url": "http://moss.amr.ith.intel.com/sites/DAP_ProjectTeams/EPP/NPTM_Documents/Forms/AllItems.aspx?RootFolder=%2fsites%2fDAP%5fProjectTeams%2fEPP%2fNPTM%5fDocuments%2fTechnical%20Documents%2fNPTM%202%2e0&FolderCTID=&View=%7b8DC114ED%2d2B14%2d4CE1%2d893C%2d63EAC8C4F71A%7d"
+               }, {
+                  "date_added": "13285127110687805",
+                  "date_last_used": "0",
+                  "guid": "bc73946b-e9b4-4235-8b89-1fbf8b3bc48c",
+                  "id": "205",
+                  "name": "Westerlee Design Documentation Review",
+                  "type": "url",
+                  "url": "http://moss.ger.ith.intel.com/sites/SVRFWGK/Westerlee/DesignReview/default.aspx"
+               }, {
+                  "date_added": "13285127110688803",
+                  "date_last_used": "0",
+                  "guid": "4f013058-57fa-4f99-8f8c-9bd1fa3a9cb4",
+                  "id": "206",
+                  "name": "Westerlee IGK",
+                  "type": "url",
+                  "url": "http://moss.ger.ith.intel.com/sites/SVRFWGK/Westerlee/default.aspx"
+               }, {
+                  "date_added": "13285127110689802",
+                  "date_last_used": "0",
+                  "guid": "3360a28e-22d3-4839-b2a5-ee05dd1601d6",
+                  "id": "207",
+                  "name": "Westerlee Program PDT",
+                  "type": "url",
+                  "url": "http://moss.amr.ith.intel.com/sites/CCGSSE/rombromoMEFWWestProg/Westerlee%20PDT%20meetings/Romley_Bromolow%20Westerlee%20Program%20PDT/default.aspx"
+               }, {
+                  "date_added": "13285127110689802",
+                  "date_last_used": "0",
+                  "guid": "d42268b2-9d57-4464-9eab-04fa4730f4ec",
+                  "id": "208",
+                  "name": "Westerlee Program",
+                  "type": "url",
+                  "url": "http://moss.amr.ith.intel.com/sites/CCGSSE/rombromoMEFWWestProg/default.aspx"
+               }, {
+                  "date_added": "13285127110690802",
+                  "date_last_used": "0",
+                  "guid": "4c793698-fc11-4bef-a4f5-5e7b06740121",
+                  "id": "209",
+                  "name": "XPlanner",
+                  "type": "url",
+                  "url": "http://gkswww001:8080/xplanner-plus/do/view/projects?null"
+               } ],
+               "date_added": "13404594658050595",
+               "date_last_used": "0",
+               "date_modified": "0",
+               "guid": "57d12f19-c126-4d23-b998-ac7ea431b7e4",
+               "id": "200",
+               "name": "Westerlee FW",
+               "type": "folder"
+            } ],
+            "date_added": "13404594658046043",
+            "date_last_used": "0",
+            "date_modified": "0",
+            "guid": "70d7760e-da04-48a8-91e6-21ee872f18d6",
+            "id": "37",
+            "name": "Imported From IE",
+            "type": "folder"
+         } ],
+         "date_added": "13404594657007319",
+         "date_last_used": "0",
+         "date_modified": "0",
+         "guid": "0bc5d13f-2cba-5d74-951f-3f233fe6c908",
+         "id": "1",
+         "name": "Bookmarks bar",
+         "type": "folder"
+      },
+      "other": {
+         "children": [  ],
+         "date_added": "13404594657007319",
+         "date_last_used": "0",
+         "date_modified": "0",
+         "guid": "82b081ec-3dd3-529c-8475-ab6c344590dd",
+         "id": "2",
+         "name": "Other bookmarks",
+         "type": "folder"
+      },
+      "synced": {
+         "children": [  ],
+         "date_added": "13404594657007319",
+         "date_last_used": "0",
+         "date_modified": "0",
+         "guid": "4cf2e351-0e85-532b-bb37-df045d8f8d0f",
+         "id": "3",
+         "name": "Mobile bookmarks",
+         "type": "folder"
+      }
+   },
+   "version": 1
+}

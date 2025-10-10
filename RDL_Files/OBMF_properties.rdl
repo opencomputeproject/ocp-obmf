@@ -1,0 +1,82 @@
+`ifndef OBMF_properties_rdl
+`define OBMF_properties_rdl
+
+property obmf_icp_version {
+    component = regfile | addrmap | reg | field;
+    type = string;
+};
+
+property device_id {
+    component = regfile | addrmap | reg | field;
+    type = string;
+};
+
+property channel_num {
+    component = regfile | addrmap | reg | field;
+    type = longint;
+};
+
+property structure_version {
+    component = regfile | addrmap | reg | field;
+    type = string;
+};
+
+property channel_type_guid {
+    component = regfile | addrmap | reg | field;
+    type = longint;
+};
+
+property read_supported {
+    component = regfile | addrmap | reg | field;
+    type = boolean;
+};
+
+property write_supported {
+    component = regfile | addrmap | reg | field;
+    type = boolean;
+};
+
+reg MMIO_SPACE_REG {
+    name = "MMIO_SPACE";
+    desc = "Memory Mapped I/O Space";
+    regwidth = 1024; 
+
+    field {
+        desc = "MMIO space";
+        sw = rw;
+    } MMIO_SPACE[1023:0];
+};
+
+reg FLASH_SPACE_REG {
+    name = "FLASH SPACE";
+    desc = "Flash space.";
+    regwidth = 1024; 
+
+    field {
+        desc = "Flash space";
+        sw = rw;
+    } FLASH_SPACE[1023:0];
+};
+
+reg TPM_SPACE_REG {
+    name = "TPM SPACE";
+    desc = "TPM space.";
+    regwidth = 512; 
+
+    field {
+        desc = "TPM space";
+        sw = rw;
+    } FLASH_SPACE[511:0];
+};
+
+reg POST_CODE_SPACE_REG {
+    name = "POST CODE SPACE";
+    desc = "Post Code space.";
+    regwidth = 8; 
+
+    field {
+        desc = "Post Code space";
+        sw = rw;
+    } POST_CODE_SPACE[7:0];
+};
+`endif

@@ -1,0 +1,233 @@
+{
+    "format": "graph-model",
+    "generatedBy": "2.11.0",
+    "convertedBy": "TensorFlow.js Converter v4.1.0",
+    "signature": {
+        "inputs": {
+            "input_1": {
+                "name": "input_1:0",
+                "dtype": "DT_FLOAT",
+                "tensorShape": { "dim": [{ "size": "-1" }, { "size": "119" }] }
+            }
+        },
+        "outputs": {
+            "dense_2": {
+                "name": "Identity:0",
+                "dtype": "DT_FLOAT",
+                "tensorShape": { "dim": [{ "size": "-1" }, { "size": "1" }] }
+            }
+        }
+    },
+    "modelTopology": {
+        "node": [
+            {
+                "name": "StatefulPartitionedCall/sequential/dense/MatMul/ReadVariableOp",
+                "op": "Const",
+                "attr": {
+                    "value": {
+                        "tensor": {
+                            "dtype": "DT_FLOAT",
+                            "tensorShape": {
+                                "dim": [{ "size": "119" }, { "size": "120" }]
+                            }
+                        }
+                    },
+                    "dtype": { "type": "DT_FLOAT" }
+                }
+            },
+            {
+                "name": "StatefulPartitionedCall/sequential/dense/BiasAdd/ReadVariableOp",
+                "op": "Const",
+                "attr": {
+                    "value": {
+                        "tensor": {
+                            "dtype": "DT_FLOAT",
+                            "tensorShape": { "dim": [{ "size": "120" }] }
+                        }
+                    },
+                    "dtype": { "type": "DT_FLOAT" }
+                }
+            },
+            {
+                "name": "StatefulPartitionedCall/sequential/dense_1/MatMul/ReadVariableOp",
+                "op": "Const",
+                "attr": {
+                    "value": {
+                        "tensor": {
+                            "dtype": "DT_FLOAT",
+                            "tensorShape": {
+                                "dim": [{ "size": "120" }, { "size": "119" }]
+                            }
+                        }
+                    },
+                    "dtype": { "type": "DT_FLOAT" }
+                }
+            },
+            {
+                "name": "StatefulPartitionedCall/sequential/dense_1/BiasAdd/ReadVariableOp",
+                "op": "Const",
+                "attr": {
+                    "value": {
+                        "tensor": {
+                            "dtype": "DT_FLOAT",
+                            "tensorShape": { "dim": [{ "size": "119" }] }
+                        }
+                    },
+                    "dtype": { "type": "DT_FLOAT" }
+                }
+            },
+            {
+                "name": "StatefulPartitionedCall/sequential/dense_2/MatMul/ReadVariableOp",
+                "op": "Const",
+                "attr": {
+                    "value": {
+                        "tensor": {
+                            "dtype": "DT_FLOAT",
+                            "tensorShape": {
+                                "dim": [{ "size": "119" }, { "size": "1" }]
+                            }
+                        }
+                    },
+                    "dtype": { "type": "DT_FLOAT" }
+                }
+            },
+            {
+                "name": "StatefulPartitionedCall/sequential/dense_2/BiasAdd/ReadVariableOp",
+                "op": "Const",
+                "attr": {
+                    "dtype": { "type": "DT_FLOAT" },
+                    "value": {
+                        "tensor": {
+                            "dtype": "DT_FLOAT",
+                            "tensorShape": { "dim": [{ "size": "1" }] }
+                        }
+                    }
+                }
+            },
+            {
+                "name": "input_1",
+                "op": "Placeholder",
+                "attr": {
+                    "dtype": { "type": "DT_FLOAT" },
+                    "shape": {
+                        "shape": {
+                            "dim": [{ "size": "-1" }, { "size": "119" }]
+                        }
+                    }
+                }
+            },
+            {
+                "name": "StatefulPartitionedCall/sequential/dense/leaky_re_lu/LeakyRelu",
+                "op": "_FusedMatMul",
+                "input": [
+                    "input_1",
+                    "StatefulPartitionedCall/sequential/dense/MatMul/ReadVariableOp",
+                    "StatefulPartitionedCall/sequential/dense/BiasAdd/ReadVariableOp"
+                ],
+                "device": "/device:CPU:0",
+                "attr": {
+                    "epsilon": { "f": 0.0 },
+                    "num_args": { "i": "1" },
+                    "T": { "type": "DT_FLOAT" },
+                    "transpose_a": { "b": false },
+                    "leakyrelu_alpha": { "f": 0.01 },
+                    "transpose_b": { "b": false },
+                    "fused_ops": {
+                        "list": { "s": ["Qmlhc0FkZA==", "TGVha3lSZWx1"] }
+                    }
+                }
+            },
+            {
+                "name": "StatefulPartitionedCall/sequential/dense_1/leaky_re_lu_1/LeakyRelu",
+                "op": "_FusedMatMul",
+                "input": [
+                    "StatefulPartitionedCall/sequential/dense/leaky_re_lu/LeakyRelu",
+                    "StatefulPartitionedCall/sequential/dense_1/MatMul/ReadVariableOp",
+                    "StatefulPartitionedCall/sequential/dense_1/BiasAdd/ReadVariableOp"
+                ],
+                "device": "/device:CPU:0",
+                "attr": {
+                    "T": { "type": "DT_FLOAT" },
+                    "fused_ops": {
+                        "list": { "s": ["Qmlhc0FkZA==", "TGVha3lSZWx1"] }
+                    },
+                    "num_args": { "i": "1" },
+                    "epsilon": { "f": 0.0 },
+                    "transpose_a": { "b": false },
+                    "transpose_b": { "b": false },
+                    "leakyrelu_alpha": { "f": 0.01 }
+                }
+            },
+            {
+                "name": "StatefulPartitionedCall/sequential/dense_2/BiasAdd",
+                "op": "_FusedMatMul",
+                "input": [
+                    "StatefulPartitionedCall/sequential/dense_1/leaky_re_lu_1/LeakyRelu",
+                    "StatefulPartitionedCall/sequential/dense_2/MatMul/ReadVariableOp",
+                    "StatefulPartitionedCall/sequential/dense_2/BiasAdd/ReadVariableOp"
+                ],
+                "device": "/device:CPU:0",
+                "attr": {
+                    "T": { "type": "DT_FLOAT" },
+                    "transpose_a": { "b": false },
+                    "transpose_b": { "b": false },
+                    "leakyrelu_alpha": { "f": 0.2 },
+                    "epsilon": { "f": 0.0 },
+                    "num_args": { "i": "1" },
+                    "fused_ops": { "list": { "s": ["Qmlhc0FkZA=="] } }
+                }
+            },
+            {
+                "name": "StatefulPartitionedCall/sequential/dense_2/Sigmoid",
+                "op": "Sigmoid",
+                "input": ["StatefulPartitionedCall/sequential/dense_2/BiasAdd"],
+                "attr": { "T": { "type": "DT_FLOAT" } }
+            },
+            {
+                "name": "Identity",
+                "op": "Identity",
+                "input": ["StatefulPartitionedCall/sequential/dense_2/Sigmoid"],
+                "attr": { "T": { "type": "DT_FLOAT" } }
+            }
+        ],
+        "library": {},
+        "versions": { "producer": 1286 }
+    },
+    "weightsManifest": [
+        {
+            "paths": ["group1-shard1of1.bin"],
+            "weights": [
+                {
+                    "name": "StatefulPartitionedCall/sequential/dense/MatMul/ReadVariableOp",
+                    "shape": [119, 120],
+                    "dtype": "float32"
+                },
+                {
+                    "name": "StatefulPartitionedCall/sequential/dense/BiasAdd/ReadVariableOp",
+                    "shape": [120],
+                    "dtype": "float32"
+                },
+                {
+                    "name": "StatefulPartitionedCall/sequential/dense_1/MatMul/ReadVariableOp",
+                    "shape": [120, 119],
+                    "dtype": "float32"
+                },
+                {
+                    "name": "StatefulPartitionedCall/sequential/dense_1/BiasAdd/ReadVariableOp",
+                    "shape": [119],
+                    "dtype": "float32"
+                },
+                {
+                    "name": "StatefulPartitionedCall/sequential/dense_2/MatMul/ReadVariableOp",
+                    "shape": [119, 1],
+                    "dtype": "float32"
+                },
+                {
+                    "name": "StatefulPartitionedCall/sequential/dense_2/BiasAdd/ReadVariableOp",
+                    "shape": [1],
+                    "dtype": "float32"
+                }
+            ]
+        }
+    ]
+}

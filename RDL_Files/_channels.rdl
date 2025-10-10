@@ -1,0 +1,30 @@
+// This is the top level summary that includes multiple channels
+// This file is for illustrative purposes only - it helps to generate linked HTML content
+
+`include "OBMF_properties.rdl"
+`include "Discovery_structure.rdl"
+`include "FLASH_structure.rdl"
+`include "VW_structure.rdl"
+`include "RTC_structure.rdl"
+`include "UART_structure.rdl"
+`include "MMIO_structure.rdl"
+`include "TPM_structure.rdl"
+`include "POST_CODE_structure.rdl"
+
+`define ADDRESS_OFFSET 0x4000
+
+addrmap OBMF_channels {
+    name = "OBMF-ICP Channels summary";
+    desc = "This file is for illustrative purposes only - it helps to generate linked HTML content";
+
+    Discovery_structure discovery @ 0x0;                    //channel 0
+    FLASH_structure flash         @ `ADDRESS_OFFSET;        //channel 1
+    VW_structure vw               @ `ADDRESS_OFFSET * 2;    //channel 2
+    RTC_structure rtc             @ `ADDRESS_OFFSET * 3;    //channel 3
+    UART_structure uart           @ `ADDRESS_OFFSET * 4;    //channel 4
+    MMIO_structure mmio           @ `ADDRESS_OFFSET * 5;    //channel 5
+    TPM_structure tpm             @ `ADDRESS_OFFSET * 6;    //channel 6
+    POST_CODE_structure post_code @ `ADDRESS_OFFSET * 7;    //channel 7
+
+    // Add more channels as needed
+};

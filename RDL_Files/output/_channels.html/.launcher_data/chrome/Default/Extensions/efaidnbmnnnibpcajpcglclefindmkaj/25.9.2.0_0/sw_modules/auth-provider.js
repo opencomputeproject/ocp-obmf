@@ -1,0 +1,18 @@
+/*************************************************************************
+* ADOBE CONFIDENTIAL
+* ___________________
+*
+*  Copyright 2015 Adobe Systems Incorporated
+*  All Rights Reserved.
+*
+* NOTICE:  All information contained herein is, and remains
+* the property of Adobe Systems Incorporated and its suppliers,
+* if any.  The intellectual and technical concepts contained
+* herein are proprietary to Adobe Systems Incorporated and its
+* suppliers and are protected by all applicable intellectual property laws,
+* including trade secret and or copyright laws.
+* Dissemination of this information or reproduction of this material
+* is strictly forbidden unless prior written permission is obtained
+* from Adobe Systems Incorporated.
+**************************************************************************/
+import{common as s}from"./common.js";import{OFFSCREEN_DOCUMENT_PATH as e}from"../common/constant.js";import{dcLocalStorage as t}from"../common/local-storage.js";import{checkForImsSidCookie as i}from"./api-util.js";import{CACHE_PURGE_SCHEME as n}from"./constant.js";import{floodgate as a}from"./floodgate.js";import{loggingApi as o}from"../common/loggingApi.js";import{util as r}from"./util.js";var c;class u{constructor(){this.isSignedIn=null,this.signInStatusPromise=null}resetSignInStatusCooldown=()=>{t.removeItem("signInStatusCooldown")};checkAndUpdateSignInStatus=async s=>{if(!await a.hasFlag("dc-cv-sid-enabled",n.NO_CALL))return;const e=this.isSignedIn;if(await i()){o.info({message:"IMS sid cookie available, calling user state API",requestId:s});const e=await this.callUserStateAPIThroughOffscreen(s);this.isSignedIn=e?.isSignedIn||!1}else o.info({message:"IMS sid cookie not available, setting sign in status to false",requestId:s}),this.isSignedIn=!1;e!==this.isSignedIn&&this.broadcastSignInStatusToTabs(s)};broadcastSignInStatusToTabs(s){chrome.tabs.query({},(e=>{e?.forEach((e=>{chrome.tabs.sendMessage(e.id,{main_op:"updateSignInStatus",status:this.isSignedIn}).catch((e=>{o.error({message:"Error in broadcasting sign in status to tabs",error:e,requestId:s})}))}))}))}async callUserStateAPIThroughOffscreen(c){const u=await a.hasFlag("dc-cv-sid-loadImsLib",n.NO_CALL),m={main_op:"getUserState",target:"offscreen",iframeURL:s.getUserStateUrl(),loadImsLib:u,ims_sid_cookie_available:await i(),requestId:c},g=`${e}?env=${s.getEnv()}`;return await r.setupOffscreenDocument(g),new Promise((s=>{setTimeout((async()=>{const e=await chrome.runtime.sendMessage(m);if(e&&e.response)try{const i=JSON.parse(e.response.userStateResponse),n=JSON.parse(a.getFeatureMeta("dc-cv-sid-enabled")||"{}");let o=Number(n.cooldown)||36e5;i?.imsTokenExpiry&&(o=new Date(i.imsTokenExpiry)-new Date),t.setWithTTL("signInStatusCooldown",!0,o),s(i)}catch(e){o.error({message:"Error in parsing user state response",error:e,requestId:c}),s(null)}else o.info({message:"No response received from user state API",requestId:c}),s(null)}),50)}))}createNewRequestId=()=>r.uuid();isUserSignedIn=async()=>{const s=this.createNewRequestId();return o.info({message:"Request received for sign in status",requestId:s}),this.signInStatusPromise?this.signInStatusPromise:t.getWithTTL("signInStatusCooldown")?(this.broadcastSignInStatusToTabs(s),this.isSignedIn):(this.signInStatusPromise=(async()=>{try{return await this.checkAndUpdateSignInStatus(s),this.isSignedIn}finally{this.signInStatusPromise=null}})(),this.signInStatusPromise)};clearImsConsciousTab=s=>{const e=t.getItem("imsConsciousTabs")||[];e.includes(s)&&(e.splice(e.indexOf(s),1),t.setItem("imsConsciousTabs",e))};recheckSignInStatus=({tabId:s})=>{(t.getItem("imsConsciousTabs")||[]).includes(s)&&this.isUserSignedIn()}}c||(c=new u);export const authProvider=c;

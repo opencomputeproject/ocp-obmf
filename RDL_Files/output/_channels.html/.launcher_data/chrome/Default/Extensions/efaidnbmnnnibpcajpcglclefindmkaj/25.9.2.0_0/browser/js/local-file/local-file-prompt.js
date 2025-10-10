@@ -1,0 +1,18 @@
+/*************************************************************************
+* ADOBE CONFIDENTIAL
+* ___________________
+*
+*  Copyright 2015 Adobe Systems Incorporated
+*  All Rights Reserved.
+*
+* NOTICE:  All information contained herein is, and remains
+* the property of Adobe Systems Incorporated and its suppliers,
+* if any.  The intellectual and technical concepts contained
+* herein are proprietary to Adobe Systems Incorporated and its
+* suppliers and are protected by all applicable intellectual property laws,
+* including trade secret and or copyright laws.
+* Dissemination of this information or reproduction of this material
+* is strictly forbidden unless prior written permission is obtained
+* from Adobe Systems Incorporated.
+**************************************************************************/
+import{dcLocalStorage as o}from"../../../common/local-storage.js";import{events as t}from"../../../common/analytics.js";import{LOCAL_FILE_PERMISSION_URL as e,ONE_DAY_IN_MS as n,POPUP_CONTEXT as r}from"../../../common/constant.js";import{floodgate as i}from"../../../sw_modules/floodgate.js";import{util as a}from"../../js/content-util.js";import{loggingApi as s}from"../../../common/loggingApi.js";import{setExperimentCodeForAnalytics as l}from"../../../common/experimentUtils.js";import{CACHE_PURGE_SCHEME as c}from"../../../sw_modules/constant.js";const m="Error in Local File Prompt";let d=!1;async function g(){try{a.translateElements(".translate");const t=document.getElementById("local-file-animated-fte");d=await async function(){const t=await chrome.runtime.sendMessage({main_op:"getFloodgateFlag",flag:"dc-cv-show-animation-on-settings",cachePurge:c.NO_CALL}),e=o.getItem("locale");return t&&("en-US"===e||"en-GB"===e)}();let e="fte_old.svg";d&&(e="fte.svg",l("LFS")),t?(t.style.backgroundImage=`url(../../images/LocalizedFte/en_US/${e})`,d&&(t.style.backgroundColor="transparent")):s.error({message:m+"initialize: FTE element not found"});document.getElementById("localFilePromptContinueButton").addEventListener("click",u),await o.init()}catch(o){s.error({message:m,error:`initialize: Error in initialization: ${o}`})}}async function u(){try{a.sendAnalytics(t.LOCAL_FTE_GO_TO_SETTINGS_CLICKED);!function(t){try{let e=o.getItem("localFileConfig");e||(e={promptCount:1}),e.eligibleDate=function(o){const t=Number(o?.settingsCoolDown);Number.isNaN(t)&&s.error({message:m,error:`_getLocalFilePromptCooldown: cooldownConfig.settingsCoolDown must be a valid number: ${o?.settingsCoolDown}`});return new Date(Date.now()+t*n).toISOString()}(t),o.setItem("localFileConfig",e)}catch(o){s.error({message:m,error:`_updateLocalFilePromptCooldown: Error updating local file prompt cooldown: ${o}`})}}(await function(){let o;try{o=i.getFeatureMeta("dc-cv-local-file-permission-prompt"),o=JSON.parse(o)}catch(t){o={promptLimit:5,ignoreCoolDown:7,settingsCoolDown:7,dismissCoolDown:7}}return o}());const l=o.getItem("localFteWindow");if(l){const{id:t,height:n,width:i,left:a,top:c}=l;let g="popup",u=e;if(d){g="normal";const o=e.split("#"),t=o[0],n=o[1];u=`${t}&context=${r.LOCAL_FILE_COACHMARK}&autoDismiss=true#${n}`}chrome.windows.create({height:n,width:i,left:a,top:c,focused:!0,type:g,url:u},(e=>{chrome.runtime.lastError?s.error({message:m,error:"handleSettingsButtonCLick: Error creating window"}):(d&&chrome.action.openPopup().catch((o=>console.error(o))),o.setItem("settingsWindow",{id:e.tabs[0].id}),chrome.windows.remove(t))}))}else s.error({message:m,error:"handleSettingsButtonCLick: Window configuration not found in storage"})}catch(o){s.error({message:m,error:`handleSettingsButtonCLick: Error in button click handler: ${o}`})}}"loading"===document.readyState?document.addEventListener("DOMContentLoaded",g):g();

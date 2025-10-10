@@ -1,0 +1,37 @@
+{
+   "action": {
+   },
+   "background": {
+      "service_worker": "background/background.js"
+   },
+   "content_scripts": [ {
+      "all_frames": true,
+      "js": [ "scout.js" ],
+      "match_about_blank": true,
+      "matches": [ "http://*/*", "https://*/*", "file:///*/*" ]
+   } ],
+   "content_security_policy": {
+      "extension_pages": "script-src 'self' 'wasm-unsafe-eval'; object-src 'self'"
+   },
+   "description": "The Enterprise Browser Extension",
+   "host_permissions": [ "http://*/*", "https://*/*", "file://*/*", "wss://*/*", "\u003Call_urls>" ],
+   "icons": {
+      "128": "branding/icon-128.png",
+      "16": "branding/icon-16.png",
+      "32": "branding/icon-32.png",
+      "48": "branding/icon-48.png"
+   },
+   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAstjWRL23NFp4/n8uPGgg4/Xw1HTaBMLYy3YC1ono03wsT37ePfQgWf2sfFiIaO8NjkGuEtHOeBKmzSYktWxaEpjVQj7FntbjWqvf+DUxg0D7hqxN+YXRR6uWr0ALJFX2jATRTR18TaJXQMdHtyQrmTJM8j9X5jxas4B/KNjWpPlb9ioWy9vsibKEcQOu5AFGQ+MuU8VeHgQ5nItKr7u1zTqLZNSpP90jo2FmOv9WYeL3uoNeYUS+ZvPdE3DhZayVewxQr8MC2ktmiECkeIjiM7SPSren59xJJMQecb/FjHwK/FL55tZOzQLh9uNmBbdjwp90ROTNQwYmxOLTDPkCLQIDAQAB",
+   "manifest_version": 3,
+   "name": "LayerX",
+   "permissions": [ "downloads", "storage", "identity", "identity.email", "webNavigation", "webRequest", "webRequestBlocking", "declarativeNetRequest", "declarativeNetRequestFeedback", "declarativeNetRequestWithHostAccess", "management", "history", "cookies", "scripting", "unlimitedStorage", "clipboardRead", "clipboardWrite", "enterprise.deviceAttributes", "contentSettings", "tabs", "proxy", "offscreen", "webRequestAuthProvider" ],
+   "storage": {
+      "managed_schema": "managedStorage.json"
+   },
+   "update_url": "https://mirovia-extension.s3.amazonaws.com/backend-prod/577f46ac-44d3-4c0e-8d56-fce12b71f5a0/update.xml",
+   "version": "0.1744.0",
+   "web_accessible_resources": [ {
+      "matches": [ "\u003Call_urls>" ],
+      "resources": [ "index.html", "config.json", "style.css", "/fonts/*", "/alert/download-blocked/index.html", "/alert/update-browser/index.html", "/alert/phishing-mark-safe/index.html", "/icons/x.inline.svg", "/icons/warning-icon.svg", "/icons/cancel-icon.svg", "/icons/like-icon.svg", "/icons/unlike-icon.svg", "/icons/layerx-logo.svg", "/web-components/*", "/branding/*", "/identity/*", "/iframe-interceptor.js", "/tesseract/*" ]
+   } ]
+}

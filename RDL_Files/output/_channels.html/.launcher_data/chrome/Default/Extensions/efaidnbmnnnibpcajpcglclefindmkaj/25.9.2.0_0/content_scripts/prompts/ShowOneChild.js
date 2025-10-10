@@ -1,0 +1,18 @@
+/*************************************************************************
+* ADOBE CONFIDENTIAL
+* ___________________
+*
+*  Copyright 2015 Adobe Systems Incorporated
+*  All Rights Reserved.
+*
+* NOTICE:  All information contained herein is, and remains
+* the property of Adobe Systems Incorporated and its suppliers,
+* if any.  The intellectual and technical concepts contained
+* herein are proprietary to Adobe Systems Incorporated and its
+* suppliers and are protected by all applicable intellectual property laws,
+* including trade secret and or copyright laws.
+* Dissemination of this information or reproduction of this material
+* is strictly forbidden unless prior written permission is obtained
+* from Adobe Systems Incorporated.
+**************************************************************************/
+const actionableCoachmark=new ActionableCoachmark,gmailAcrobatFteCoachmark=new GmailAcrobatFteCoachmark,gdriveAcrobatFteCoachmark=new GDriveAcrobatFteCoachmark,embeddedPDFTouchPointCoachMark=new EmbeddedPDFTouchPointCoachMark,whatsappExpressFte=new WhatsappExpressFte,outlookFte=new OutlookFte,linkedinFte=new LinkedInFte,gmailExpressFte=new GmailExpressFte,gdriveExpressFte=new GdriveExpressFte,gmailConvertToPdfFte=new GmailConvertToPdfFte,googleImagePreviewExpressFte=new GoogleImagePreviewExpressFte;class ShowOneChild{constructor(){this.expressFte=this.getExpressFte(),this.prompts=[actionableCoachmark,{id:"ExpressFte",isEligible:async()=>(await this.expressFte).isExpressFteEligible(),render:async()=>{(await this.expressFte).renderExpressFte()},timeout:3e3},linkedinFte,embeddedPDFTouchPointCoachMark,outlookFte,whatsappExpressFte,googleImagePreviewExpressFte,gmailConvertToPdfFte,gmailAcrobatFteCoachmark,gmailExpressFte,gdriveAcrobatFteCoachmark,gdriveExpressFte],this.cancelPromise=new Deferred,this.cancelPromise.promise.catch((e=>{})),this.subscribeToPromptEvents(),window.addEventListener("beforeunload",this.releaseLock)}_cancelRender(){this.cancelPromise.reject(),this.cancelPromise=new Deferred,this.cancelPromise.promise.catch((e=>{}))}async getExpressFte(){const e=chrome.runtime.getURL("content_scripts/express/express-fte.js");return(await import(e)).default}subscribeToPromptEvents=()=>{chrome.runtime.onMessage.addListener((async e=>{switch(e.action){case"clearRenderPrompt":await initDcLocalStorage(),window.dcLocalStorage?.removeItem("renderPrompt");break;case"reRenderShowOneChild":this.render()}}))};setRenderPromptTTL(e){window.dcLocalStorage?.setWithTTL("renderPrompt",e?.id,864e5)}lockRenderPrompt(){window.dcLocalStorage?.setWithTTL("renderPrompt","locked",2e3)}releaseLock(){const e=window.dcLocalStorage?.getWithTTL("renderPrompt");"locked"===e&&(window.dcLocalStorage?.removeItem("renderPrompt"),chrome.runtime.sendMessage({main_op:"local-storage-remove",key:"renderPrompt"}))}readRenderPromptFromStorage=async()=>{let e=0,r=window.dcLocalStorage?.getWithTTL("renderPrompt");for(;"locked"===r;){if(e>=10)return;await new Promise((r=>setTimeout(r,200*(e+1)))),e++,r=window.dcLocalStorage?.getWithTTL("renderPrompt")}return r};getRenderPrompt=async e=>{const r=await Promise.race([this.readRenderPromptFromStorage(),e]);if(""===r||!this.prompts.some((e=>e.id===r)))try{this.lockRenderPrompt();for(const e of this.prompts)e.eligiblityPromise=e?.isEligible?.();for(const r of this.prompts){if(await PromiseTimeout(Promise.race([r.eligiblityPromise,e]),{timeout:r?.timeout??2e3}))return this.setRenderPromptTTL(r),r}return}finally{this.releaseLock()}};getRenderedPromptId=()=>this.renderedPromptId;render=async()=>{this._cancelRender();try{const e=await this.getRenderPrompt(this.cancelPromise.promise);return e&&e.render&&e.render(),this.renderedPromptId=e?.id,e?.id}catch(e){}}}const showOneChild=new ShowOneChild;

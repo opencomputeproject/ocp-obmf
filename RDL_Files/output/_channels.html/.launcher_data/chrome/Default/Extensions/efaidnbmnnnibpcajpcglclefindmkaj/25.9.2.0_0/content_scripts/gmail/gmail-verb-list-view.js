@@ -1,0 +1,18 @@
+/*************************************************************************
+* ADOBE CONFIDENTIAL
+* ___________________
+*
+*  Copyright 2015 Adobe Systems Incorporated
+*  All Rights Reserved.
+*
+* NOTICE:  All information contained herein is, and remains
+* the property of Adobe Systems Incorporated and its suppliers,
+* if any.  The intellectual and technical concepts contained
+* herein are proprietary to Adobe Systems Incorporated and its
+* suppliers and are protected by all applicable intellectual property laws,
+* including trade secret and or copyright laws.
+* Dissemination of this information or reproduction of this material
+* is strictly forbidden unless prior written permission is obtained
+* from Adobe Systems Incorporated.
+**************************************************************************/
+import state from"./state.js";import{getClosestElementBasedOnSelector,LIST_VIEW,getElementsByClassNameSelectors,getAttachmentByFileTypeSelectors,sendAnalyticsEvent}from"./util.js";import{ACROBAT_NON_PDF_PROCESSED,addCommonClickListener,markElementAsProcessed}from"./gmail-verb-native-viewer.js";import{getAttachmentDetailsFromThreadData,getVisibleListView,isMultipleAttachmentWithSameName,shouldShowTouchPoint}from"./list-view-touch-point-service.js";const getListViewAttachmentsWithThreadElement=(t,e,s)=>{const o=getElementsByClassNameSelectors(t,"attachmentIcon","listView");if(0===o?.length)return;const n=getAttachmentByFileTypeSelectors(o,state?.gmailConvertToPdfConfig?.metadata?.selectors,ACROBAT_NON_PDF_PROCESSED);if(!n?.length)return{};const a={};for(const t of n){const o=getClosestElementBasedOnSelector(t,"threadElement","listView"),n=o?.querySelector("[data-thread-id]");if(!n)continue;const i=n.getAttribute("data-thread-id"),r=i?.substring(i?.indexOf("#")+1);isDataPresentForThreadId(r,e)&&(a[r]?a[r][s].push(t):a[r]={[s]:[t],threadElement:o})}return a};function mergeAttachments(t,e){if(e)for(const[s,o]of Object.entries(e)){t[s]||(t[s]=[]);const e=o.map((({url:t})=>t));t[s].push(...e)}}const getAttachmentURLAgainstName=t=>{const e={},s=Object.values(state?.gmailConvertToPdfConfig?.metadata?.fileExtToMimeTypeMap||{});for(const o of Object.values(t)){const{nonPDFAttachments:t,driveAttachments:n}=o;for(const a of s)t?.size>0&&mergeAttachments(e,t.get(a)),n?.size>0&&mergeAttachments(e,o.nonPDFDriveAttachments.get(a))}return e},isDataPresentForThreadId=(t,e)=>{let s=state.getMessagesForThreadId(t);return!s&&e&&e[t]&&(s=e[t].messages),!!s},getDataForThreadId=(t,e)=>{let s=state.getMessagesForThreadId(t);return!s&&e?.[t]&&(s=e[t].messages),s?getAttachmentURLAgainstName(s):null},processForAttachment=(t,e)=>{if(!e||0===Object.keys(e).length)return;const s=getClosestElementBasedOnSelector(t,"attachmentDiv","listView");if(s&&"Y"!==t.getAttribute(ACROBAT_NON_PDF_PROCESSED)){markElementAsProcessed(t);const o=s.getAttribute("title"),n=isMultipleAttachmentWithSameName(e,o),a=!n&&e[o]?.[0];!n&&shouldShowTouchPoint(a)&&addCommonClickListener(s,{name:o,url:a},LIST_VIEW,state?.eventControllerSignal)}},processForThread=(t,e,s,o)=>{const n=s[o],a=getDataForThreadId(t,e);if(a)for(const t of n)processForAttachment(t,a)},processForAllThreads=(t,e,s)=>{for(const[o,n]of Object.entries(t)){const t=n[s];t?.length>0&&processForThread(o,e,n,s)}},addTouchPointInNativeViewerViaListView=(t,e,s)=>{const o=getListViewAttachmentsWithThreadElement(t,e,s);o&&processForAllThreads(o,e,s)},addTouchpointToNativeViewerViaListView=t=>{try{if(!chrome?.runtime?.id||!state?.gmailConvertToPdfConfig?.enableConvertToPdfTouchpointInGmail)return;const e=getVisibleListView();e&&addTouchPointInNativeViewerViaListView(e,t,"nonPdfAttachments")}catch(t){}};export{addTouchpointToNativeViewerViaListView};

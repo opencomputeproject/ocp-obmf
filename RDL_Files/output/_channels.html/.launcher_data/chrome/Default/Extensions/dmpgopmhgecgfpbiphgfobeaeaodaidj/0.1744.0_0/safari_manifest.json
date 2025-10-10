@@ -1,0 +1,8 @@
+{
+    "manifest_version": 2,
+    "background": {
+        "scripts": ["background/background.js"],
+        "persistent": true
+    },
+    "safari_permissions": ["alarms", "activeTab", "nativeMessaging"]
+}

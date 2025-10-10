@@ -1,0 +1,283 @@
+<!--
+/*************************************************************************
+* ADOBE CONFIDENTIAL
+* ___________________
+*
+*  Copyright 2025 Adobe Systems Incorporated
+*  All Rights Reserved.
+*
+* NOTICE:  All information contained herein is, and remains
+* the property of Adobe Systems Incorporated and its suppliers,
+* if any.  The intellectual and technical concepts contained
+* herein are proprietary to Adobe Systems Incorporated and its
+* suppliers and are protected by all applicable intellectual property laws,
+* including trade secret and or copyright laws.
+* Dissemination of this information or reproduction of this material
+* is strictly forbidden unless prior written permission is obtained
+* from Adobe Systems Incorporated.
+**************************************************************************/
+-->
+
+<style>
+    .cc440d50ba-express-entrypoint-button {
+        display: flex;
+        flex-direction: row;
+        height: 32px;
+        border-radius: 16px;
+        position: relative;
+        cursor: pointer;
+        background-color: #E8E8E8;
+        color: rgba(0, 0, 0, 0.84);
+        align-items: center;
+        box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+    }
+
+    .cc440d50ba-express-entrypoint-button:hover {
+        background-color: #E0E0E0;
+    }
+
+    .cc440d50ba-express-entrypoint-button .cc440d50ba-express-entrypoint-button-icon {
+        display: flex;
+        width: 40px;
+        height: 32px;
+        padding: 7px 8px 7px 14px;
+        box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+    }
+
+    .cc440d50ba-express-entrypoint-button .cc440d50ba-express-entrypoint-button-icon img {
+        width: 18px;
+        height: auto;
+    }
+
+    .cc440d50ba-express-entrypoint-button .cc440d50ba-express-entrypoint-button-text {
+        font-family: "Adobe Clean", adobe-clean, "AdobeClean-Regular", sans-serif !important;
+        display: flex;
+        padding: 6px 16px 8px 0;
+        font-size: 14px;
+        font-weight: 700;
+        line-height: 100%;
+        box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+    }
+
+    .gmailNativeViewer .cc440d50ba-express-entrypoint-button {
+      display: none;
+      background-color: rgba(0, 0, 0, 0.75);
+      color: rgba(235, 235, 235, 1);
+      border: 2px solid rgba(75, 75, 75, 1);
+    }
+
+    @media screen and (min-width: 800px) {
+      .gmailNativeViewer .cc440d50ba-express-entrypoint-button {
+        display: flex;
+      }
+    }
+
+    .gmailNativeViewer .cc440d50ba-express-entrypoint-button:hover {
+      background: rgba(75, 75, 75, 1);
+    }
+
+    .gmailNativeViewer .cc440d50ba-express-entrypoint-button-icon svg path {
+      fill: #FFFFFF;
+    }
+
+    .gmailNativeViewer.cc440d50ba-tooltiptext {
+      background-color: #DBDBDB;
+      color: #111111;
+    }
+
+    .gmailNativeViewer.cc440d50ba-tooltiptext-bottom::after {
+      border-color: transparent transparent #DBDBDB transparent;
+    }
+
+    .whatsappHover .cc440d50ba-express-entrypoint-button {
+      border: 2px solid #C6C6C6;
+    }
+
+    .gmailMessageView .cc440d50ba-express-entrypoint-button {
+      border: 2px solid #C6C6C6;
+    }
+
+    .gdriveNativeViewer .cc440d50ba-express-entrypoint-button {
+      display: none;
+      background-color: rgba(0, 0, 0, 0.75);
+      color: rgba(235, 235, 235, 1);
+      border: 2px solid rgba(75, 75, 75, 1);
+    }
+
+    .gdriveNativeViewer .cc440d50ba-express-entrypoint-button:hover {
+      background: rgba(75, 75, 75, 1);
+    }
+
+    .gdriveNativeViewer .cc440d50ba-express-entrypoint-button-icon svg path {
+      fill: #FFFFFF;
+    }
+
+    .googleImagePreview.cc440d50ba-express-entrypoint-wrapper {
+      position: relative;
+    }
+
+    .gdriveNativeViewer.cc440d50ba-tooltiptext {
+      background-color: #DBDBDB;
+      color: #111111;
+    }
+
+    .gdriveNativeViewer.cc440d50ba-tooltiptext-bottom::after {
+      border-color: transparent transparent #DBDBDB transparent;
+    }
+
+    /* align the button to the center of the container as there are gaps in the facebook image preview header */
+    .facebookPreview {
+      display: flex;
+      align-items: center;
+      padding-right: 6px;
+    }
+
+    .facebookPreview.facebookMarketPlacePreview {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      z-index: 2;
+    }
+
+    .facebookPreview .cc440d50ba-express-entrypoint-button {
+      height: 36px;
+      border-radius: 20px;
+      background: #1C1C1D99;
+      border: 2px solid #393939;
+      color: #DBDBDB;
+      overflow: hidden;
+      box-sizing: unset;
+      -webkit-box-sizing: unset;
+      -moz-box-sizing: unset;
+    }
+
+    .facebookPreview .cc440d50ba-express-entrypoint-button:hover {
+      background: #4B4B4B99;
+    }
+
+    .facebookPreview .cc440d50ba-express-entrypoint-button .cc440d50ba-express-entrypoint-button-icon {
+        display: flex;
+        width: 38px;
+        height: 36px;
+        padding: 9px 6px 9px 14px;
+        box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+    }
+
+    .facebookPreview .cc440d50ba-express-entrypoint-button .cc440d50ba-express-entrypoint-button-icon img {
+        width: 20px;
+        height: auto;
+    }
+
+    .facebookPreview .cc440d50ba-express-entrypoint-button .cc440d50ba-express-entrypoint-button-text {
+      transition: all 0.3s;
+      transition-behavior: allow-discrete;
+    }
+
+    .facebookPreview .cc440d50ba-express-entrypoint-button .cc440d50ba-express-entrypoint-button-text.minified {
+      transform: translateX(100%);
+      width: 0;
+      padding: 0;
+    }
+
+    .facebookPreview .cc440d50ba-express-entrypoint-button:hover .cc440d50ba-express-entrypoint-button-text.minified {
+      transition-delay: 1s;
+      transform: translateX(0%);
+      width: auto;
+      padding: 6px 16px 8px 0;
+    }
+
+    .facebookPreview .cc440d50ba-express-entrypoint-button .cc440d50ba-express-entrypoint-button-icon {
+      transition: all 0.3s;
+      transition-behavior: allow-discrete;
+    }
+
+    .facebookPreview .cc440d50ba-express-entrypoint-button .cc440d50ba-express-entrypoint-button-icon.minified {
+      width: 36px;
+      padding: 8px;
+    }
+
+    .facebookPreview .cc440d50ba-express-entrypoint-button:hover .cc440d50ba-express-entrypoint-button-icon.minified {
+      transition-delay: 1s;
+      width: 38px;
+      padding: 9px 6px 9px 14px;
+    }
+
+    .facebookPreview.cc440d50ba-tooltiptext {
+      background-color: #DBDBDB;
+      color: #111111;
+    }
+
+    .facebookPreview.cc440d50ba-tooltiptext-bottom::after {
+      border-color: transparent transparent #DBDBDB transparent;
+    }
+
+    @media screen and (min-width: 880px) {
+      .gdriveNativeViewer .cc440d50ba-express-entrypoint-button {
+        display: flex;
+      }
+    }
+
+    .cc440d50ba-tooltiptext {
+      font-family: "Adobe Clean", adobe-clean, "AdobeClean-Bold", sans-serif !important;
+      pointer-events: none;
+      cursor: default;
+      font-weight: 400;
+      font-size: 12px;
+      visibility: hidden;
+      width: 200px;
+      top: 119%;
+      line-height: 15px;
+      background-color: #292929;
+      color: #fff;
+      text-align: left;
+      border-radius: 7px;
+      padding: 4px 9px 5px 9px;
+      position: absolute;
+      z-index: 10000;
+      box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+    }
+
+    .cc440d50ba-tooltiptext-bottom::after {
+      content: "";
+      position: absolute;
+      bottom: 100%;
+      left: 50%;
+      margin-left: -5px;
+      border-width: 5px;
+      border-style: solid;
+      border-color: transparent transparent black transparent;
+    }
+
+    .cc440d50ba-tooltiptext-top::after {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      margin-left: -5px;
+      border-width: 5px;
+      border-style: solid;
+      border-color: black transparent transparent transparent;
+    }
+
+</style>
+
+<div>
+  <div id="express-single-click-cta" class="cc440d50ba-express-entrypoint-button">
+    <div class="cc440d50ba-express-entrypoint-button-icon">
+      <img class="cc440d50ba-express-entrypoint-button-icon-img" src="">
+    </div>
+    <div id="expressEditImageParentContextMenu" class="cc440d50ba-express-entrypoint-button-text translate">
+    </div>
+  </div>
+</div>
+

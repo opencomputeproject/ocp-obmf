@@ -1,0 +1,306 @@
+<!-- express-dropdown-menu.html -->
+
+<style>
+    .cc440d50ba-express-entrypoint-button {
+        display: flex;
+        flex-direction: row;
+        height: 32px;
+        border-radius: 16px;
+        overflow: hidden;
+        cursor: pointer;
+        background-color: #E6E6E6;
+        color: #222222;
+    }
+
+    .cc440d50ba-express-entrypoint-button:hover {
+        background-color: #B1B1B1;
+    }
+
+    .cc440d50ba-express-entrypoint-button .cc440d50ba-express-entrypoint-button-icon {
+        display: flex;
+        width: 40px;
+        height: 32px;
+        padding: 7px 8px 7px 14px;
+        box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+    }
+
+    .cc440d50ba-express-entrypoint-button .cc440d50ba-express-entrypoint-button-icon img {
+        width: 18px;
+        height: auto;
+    }
+
+    .cc440d50ba-express-entrypoint-button .cc440d50ba-express-entrypoint-button-text {
+        font-family: "Adobe Clean", adobe-clean, "AdobeClean-Regular", sans-serif !important;
+        display: flex;
+        padding: 5px 16px 8px 0;
+        font-size: 14px;
+        font-weight: 700;
+        line-height: 20.8px;
+        box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+    }
+
+    .cc440d50ba-express-dropdown-menu {
+        width: 258px;
+        height: 180px;
+        display: none;
+        position: absolute;
+        box-shadow: 0px 2px 8px 0px #00000029;
+        border-radius: 10px;
+        margin-top: 6px;
+        padding: 8px;
+        background:  #FFFFFF;
+        z-index: 1000;
+        box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+    }
+
+    .cc440d50ba-express-dropdown-menu-show {
+        display: block;
+    }
+
+    .cc440d50ba-express-dropdown-menu-content {
+        width: 242px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .cc440d50ba-express-dropdown-menu-content a {
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+    }
+
+    .cc440d50ba-express-dropdown-menu-content-header {
+      display: flex;
+      flex-direction: column;
+      padding: 6px 12px 8px 12px;
+      box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+    }
+
+    .cc440d50ba-express-dropdown-menu-content-header-title-row {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .cc440d50ba-express-dropdown-menu-content-header-title-row-icon {
+      display: flex;
+      align-items: center;
+      width: 18px;
+      gap: 10px;
+      padding-top: 6px;
+      padding-bottom: 6px;
+    }
+
+    .cc440d50ba-express-dropdown-menu-content-header-title-row-icon img {
+      width: 100%;
+    }
+
+    .cc440d50ba-express-dropdown-menu-content-header-title-row-title {
+      font-family: "Adobe Clean", adobe-clean, "AdobeClean-Bold", sans-serif !important;
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 100%;
+      letter-spacing: 0%;
+      color: #292929;
+    }
+
+    .cc440d50ba-express-dropdown-menu-content-header-title-row-subtitle {
+      height: 15px;
+      font-family: "Adobe Clean", adobe-clean, "AdobeClean-Bold", sans-serif !important;
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 100%;
+      letter-spacing: 0%;
+      color: #505050;
+    }
+
+    .cc440d50ba-express-dropdown-menu-content-item-group {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .cc440d50ba-express-dropdown-menu-content-item {
+        display: flex;
+        align-items: center;
+        width: 242px;
+        height: 32px;
+        padding-right: 12px;
+        padding-left: 12px;
+        cursor: pointer;
+        box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+    }
+
+    .cc440d50ba-express-dropdown-menu-content-item:hover {
+      border-radius: 8px;
+      overflow: hidden;
+      background: #E9E9E9;
+    }
+
+    .cc440d50ba-express-dropdown-menu-content-item-icon {
+        padding-right: 6px;
+        box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+    }
+    
+    .cc440d50ba-express-dropdown-menu-content-item-icon img {
+      width: 18px;
+      height: 18px;
+    }
+
+    .cc440d50ba-express-dropdown-menu-content-item-text {
+        width: 194px;
+        gap: 1px;
+        padding-top: 6px;
+        padding-bottom: 8px;
+        font-family: "Adobe Clean", adobe-clean, "AdobeClean-Bold", sans-serif !important;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 100%;
+        letter-spacing: 0%;
+        color: #292929;
+        box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+    }
+
+    .gmailNativeViewer .cc440d50ba-express-entrypoint-button {
+      display: none;
+      background-color: rgba(255, 255, 255, 0);
+      color: #FFFFFF;
+      border: 2px solid rgba(255, 255, 255, 0.9);
+      align-items: center;
+      box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+    }
+    
+    .gmailNativeViewer .cc440d50ba-express-entrypoint-button:hover {
+      background: rgba(255, 255, 255, 0.25);
+    }
+
+    .gmailNativeViewer .cc440d50ba-express-entrypoint-button-icon svg path {
+      fill: #FFFFFF;
+    }
+    
+    @media screen and (min-width: 800px) {
+      .gmailNativeViewer .cc440d50ba-express-entrypoint-button {
+        display: flex;
+      }
+    }
+    
+    @media screen and (max-width: 800px) {
+      .gmailNativeViewer .cc440d50ba-express-dropdown-menu-show {
+        display: none;
+      }
+    }
+
+    .cc440d50ba-tooltiptext {
+      font-family: "Adobe Clean", adobe-clean, "AdobeClean-Bold", sans-serif !important;
+      font-weight: 400;
+      font-size: 12px;
+      visibility: hidden;
+      width: 200px;
+      background-color: #292929;
+      color: #fff;
+      text-align: left;
+      border-radius: 7px;
+      padding: 4px 9px 5px 9px;
+      position: absolute;
+      z-index: 10000;
+      box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+    }
+
+    .cc440d50ba-tooltiptext::after {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      margin-left: -5px;
+      border-width: 5px;
+      border-style: solid;
+      border-color: black transparent transparent transparent;
+    }
+
+</style>
+
+<div>
+  <div id="whatsapp-preview-adobe-entry-point" class="cc440d50ba-express-entrypoint-button">
+    <div class="cc440d50ba-express-entrypoint-button-icon">
+    </div>
+    <div id="expressEditImageParentContextMenu" class="cc440d50ba-express-entrypoint-button-text translate">
+    </div>
+  </div>
+  <div class="cc440d50ba-express-dropdown-menu">
+      <div class="cc440d50ba-express-dropdown-menu-content">
+          <div class="cc440d50ba-express-dropdown-menu-content-header">
+            <div class="cc440d50ba-express-dropdown-menu-content-header-title-row">
+              <div class="cc440d50ba-express-dropdown-menu-content-header-title-row-icon">
+                <img class="cc440d50ba-express-dropdown-menu-content-header-title-row-icon-img" src="" />
+              </div>
+              <div id="expressDropdownMenuTitle" class="cc440d50ba-express-dropdown-menu-content-header-title-row-title translate"></div>
+            </div>
+            <div id="expressEditImagePoweredByExpressContextMenu" class="cc440d50ba-express-dropdown-menu-content-header-title-row-subtitle translate"></div>
+          </div>
+          <div class="cc440d50ba-express-dropdown-menu-content-item-group">
+            <div class="cc440d50ba-express-dropdown-menu-content-item cc440d50ba-express-item-edit-image">
+              <div class="cc440d50ba-express-dropdown-menu-content-item-icon">
+                <img class="cc440d50ba-express-dropdown-menu-content-item-icon-img" src="" />
+              </div>
+              <div id="editImageContextMenu" class="cc440d50ba-express-dropdown-menu-content-item-text translate"></div>
+            </div>
+            <div class="cc440d50ba-express-dropdown-menu-content-item cc440d50ba-express-item-remove-background">
+              <div class="cc440d50ba-express-dropdown-menu-content-item-icon">
+                <img class="cc440d50ba-express-dropdown-menu-content-item-icon-img" src="" />
+              </div>
+              <div id="removeBackgroundImageContextMenu" class="cc440d50ba-express-dropdown-menu-content-item-text translate"></div>
+            </div>
+            <div class="cc440d50ba-express-dropdown-menu-content-item cc440d50ba-express-item-crop-image">
+              <div class="cc440d50ba-express-dropdown-menu-content-item-icon">
+                <img class="cc440d50ba-express-dropdown-menu-content-item-icon-img" src="" />             
+              </div>
+              <div id="cropImageContextMenu" class="cc440d50ba-express-dropdown-menu-content-item-text translate"></div>
+            </div>
+          </div>
+          <!-- <div class="cc440d50ba-express-dropdown-menu-content-item-group">
+            <div class="cc440d50ba-express-dropdown-menu-content-item cc440d50ba-express-item-apply-effects">
+              <div class="cc440d50ba-express-dropdown-menu-content-item-icon">
+                <img class="cc440d50ba-express-dropdown-menu-content-item-icon-img" src="" />           
+              </div>
+              <div id="effectsImageContextMenu" class="cc440d50ba-express-dropdown-menu-content-item-text translate"></div>
+            </div>
+            <div class="cc440d50ba-express-dropdown-menu-content-item cc440d50ba-express-item-insert-object">
+              <div class="cc440d50ba-express-dropdown-menu-content-item-icon">
+                <img class="cc440d50ba-express-dropdown-menu-content-item-icon-img" src="" />
+              </div>
+              <div id="insertObjectImageContextMenu" class="cc440d50ba-express-dropdown-menu-content-item-text translate"></div>
+            </div>
+            <div class="cc440d50ba-express-dropdown-menu-content-item cc440d50ba-express-item-remove-object">
+              <div class="cc440d50ba-express-dropdown-menu-content-item-icon">
+                <img class="cc440d50ba-express-dropdown-menu-content-item-icon-img" src="" />
+              </div>
+              <div id="removeObjectImageContextMenu" class="cc440d50ba-express-dropdown-menu-content-item-text translate"></div>
+            </div>
+          </div> -->
+      </div>
+  </div>
+</div>
+
